@@ -1,4 +1,4 @@
-version: 0.3.11 <br>
+version: 0.3.12 <br>
 
 <script>
  
@@ -109,19 +109,24 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
  <b onMouseOver="{
      document.getElementById('myDiv01').innerHTML = 'Issues include: sugar, food with preservatives, canned foods and soups, MSG etc...'             
                  
-  }">Issues: </b><input type=button value=Small style="font-size : 40px; " onclick="{
-  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 5         
+  }">Issues: </b><input type=button value="1%" style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 1         
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
 }">  
+  <input type=button value="Small 5%"  style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 5         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}"> 
   
- <input type=button value=Medium  style="font-size : 40px; " onclick="{
+ <input type=button value="Medium 10%"  style="font-size : 40px; " onclick="{
   document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 10         
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
 }">  
   
- <input type=button value=Large  style="font-size : 40px;" onclick="{
+ <input type=button value="Large 15%" style="font-size : 40px;" onclick="{
   document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 15         
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
