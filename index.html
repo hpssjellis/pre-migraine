@@ -1,13 +1,12 @@
-version: 0.0.8 <br>
+version: 0.0.9 <br>
 
 
 
 
 
 <body onload="{
-   myStorage01 = localStorage.getItem('myStoredText01')
-   if(myStorage01  != null){
-      document.getElementById('myText01').value = myStorage01 
+   if(localStorage.getItem('myStoredText01')  != null){
+      document.getElementById('myText01').value = localStorage.getItem('myStoredText01')
     }
 }"  onunload="{
    localstorage.setItem('myStoredText01', document.getElementById('myText01').value)
@@ -16,7 +15,7 @@ version: 0.0.8 <br>
    
    
 Text example: <input id="myText01" type=text size=70 value="" placeholder="Write here to store" onchange="{
-   document.localstorage.setItem('myStoredText01', document.getElementById('myText01').value)
+  // localstorage.setItem('myStoredText01', document.getElementById('myText01').value)
    alert('saved')
 }"><br>
 
@@ -24,7 +23,7 @@ Text example: <input id="myText01" type=text size=70 value="" placeholder="Write
 
    
    
-<input type="range" min="0" max="1000" step="1" value="" id="myMain" style=" position:absolute; top:40%; transform:rotate(270deg); width:200px; height:500px; "> <br>
+<input type="range" min="0" max="1000" step="1" value="" id="myMain" style=" position:absolute; top:40%; transform:rotate(270deg); width:2000px; height:5000px; "> <br>
    
    
    
