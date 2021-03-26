@@ -1,0 +1,82 @@
+version: 0.0.36 <br>
+
+<script>
+ 
+ document.myMsPerMilliCode = 3000
+ 
+ 
+function myCountDown(){
+ 
+ document.getElementById('myText1').value = parseInt(document.getElementById('myText1').value) - 1
+ document.getElementById('myMain').value  =  parseInt(document.getElementById('myText1').value)/1000
+ document.getElementById('myText3').value  =  parseFloat(document.getElementById('myText1').value)/1000
+ document.getElementById('mySave01').click()
+ 
+}   
+    
+</script>
+
+
+   
+   
+<input type="range" min="0" max="100" step="1" value="" id="myMain"  style=" position:absolute; top:40%; transform:rotate(270deg); width:1000px; 
+   height:200px;  slider.style.background : linear-gradient(to right, red 0%, red ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%) " onchange="{
+   document.getElementById('myText1').value = parseInt(this.value) * 1000
+   document.getElementById('mySave01').click()
+}"> <br>
+   
+   
+   
+   
+
+<body onload="{
+        
+   document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)  
+              
+   myStorage = localStorage.getItem('myStoredText')
+   if(myStorage  != null){
+      document.getElementById('myText1').value = parseInt(myStorage) 
+      document.getElementById('myMain').value  = parseInt(myStorage) / 1000     
+    }
+              
+                            
+   myStorage2 = localStorage.getItem('myStoredText2')
+   if(myStorage2  != null){
+      let myNow = new Date().getTime();  
+      let myNew = myStorage - (((myNow -myStorage2)/10000) * document.myMsPerMilliCode)
+              
+      if (myNew > 100000){myNew = 100000}        
+       //alert(myNew)       
+      document.getElementById('myText2').value = myNow 
+      document.getElementById('myText1').value = parseInt(myNew) 
+      document.getElementById('myMain').value  = parseInt(myNew)   / 1000  
+              
+      document.getElementById('myText3').value  = parseFloat(myNew)   / 1000  
+    }
+              
+}">
+
+<body onunload="{
+   localstorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
+   localstorage.setItem('myStoredText2',document.getElementById('myText2').value)
+}">   
+
+Actual: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
+Migraine Code: <input id="myText3" type=text size=70 value="" placeholder="Write here to store"><br>
+Now: <input id="myText2" type=text size=70 value="" placeholder="Write here to store"><br>
+
+<input id="mySave01" type="hidden" value="Store Text" onClick="{
+   localStorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
+   localStorage.setItem('myStoredText2', document.getElementById('myText2').value)
+   let myNow2 = new Date().getTime();  
+    document.getElementById('myText2').value = myNow2 
+}">
+
+<input type="hidden" value="Retrieve Text" onClick="{
+   document.getElementById('myText1').value = localStorage.getItem('myStoredText')
+}"> 
+
+
+   
+   
+  
