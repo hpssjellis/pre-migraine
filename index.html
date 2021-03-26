@@ -1,4 +1,4 @@
-version: 0.0.34 <br>
+version: 0.0.35 <br>
 
 <script>
  
@@ -44,6 +44,8 @@ function myCountDown(){
    if(myStorage2  != null){
       let myNow = new Date().getTime();  
       let myNew = myStorage - (((myStorage2 - myNow)/10000) * document.myMsPerMilliCode)
+              
+      if (myNew > 100000){myNew = 100000}        
        //alert(myNew)       
       document.getElementById('myText2').value = myNow 
       document.getElementById('myText1').value = parseInt(myNew) 
@@ -66,6 +68,8 @@ Now: <input id="myText2" type=text size=70 value="" placeholder="Write here to s
 <input id="mySave01" type="hidden" value="Store Text" onClick="{
    localStorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
    localStorage.setItem('myStoredText2', document.getElementById('myText2').value)
+   let myNow2 = new Date().getTime();  
+    document.getElementById('myText2').value = myNow2 
 }">
 
 <input type="hidden" value="Retrieve Text" onClick="{
