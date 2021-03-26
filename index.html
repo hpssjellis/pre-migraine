@@ -1,4 +1,4 @@
-version: 0.1.3 <br>
+version: 0.1.4 <br>
 
 <script>
  
@@ -65,9 +65,7 @@ function myCountDown(){
  
  <h1 align=center>Brain Health</h1>
 
-Actual: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
-Migraine Code: <input id="myText3" type=text size=70 value="" placeholder="Write here to store"><br>
-Now: <input id="myText2" type=text size=70 value="" placeholder="Write here to store"><br>
+
 
 <input id="mySave01" type="hidden" value="Store Text" onClick="{
    localStorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
@@ -83,9 +81,15 @@ Now: <input id="myText2" type=text size=70 value="" placeholder="Write here to s
  
  
  <table border = 1>
-  <tr><td>Healthy Eating: </td></td><input type=range value="" Min = 0 Max=10 ></td></tr>
-  <tr><td>Exercise:</td></td> <input type=range value="" Min = 0 Max=10 > </td></tr>
-  <tr><td>Mellow:</td></td> <input type=range value="" Min = 0 Max=10 ></td></tr>
+  
+  <tr><td>  Actual: </td><td>          <input id="myText1" type=text size=70 value="" placeholder="Write here to store"></td></tr>
+  <tr><td>  Migraine Code: </td><td>   <input id="myText3" type=text size=70 value="" placeholder="Write here to store"></td></tr>
+  <tr><td>  Now:  </td><td>            <input id="myText2" type=text size=70 value="" placeholder="Write here to store"></td></tr>
+  
+  
+  <tr><td> Healthy Eating: </td><td>   <input type=range value="" Min = 0 Max=10 ></td></tr>
+  <tr><td> Exercise:</td><td>          <input type=range value="" Min = 0 Max=10 > </td></tr>
+  <tr><td> Mellow:</td><td>            <input type=range value="" Min = 0 Max=10 ></td></tr>
  </table>
    
    
