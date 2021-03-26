@@ -1,4 +1,4 @@
-version: 0.0.2 <br>
+version: 0.0.3 <br>
 
 
 
@@ -9,13 +9,29 @@ version: 0.0.2 <br>
    if(myStorage  != null){
       document.getElementById('myText1').value = myStorage 
     }
-}">
-
-<body onunload="{
+}"  onunload="{
    localstorage.setItem('myStoredText', document.getElementById('myText1').value)
 }">   
 
 Text example: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
+
+
+
+   
+   
+<input type="range" width=200 min="0" max="1000" step="1" value="" id="myMain" style=" position:absolute; top:40%; transform:rotate(270deg);"> <br>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ <!--
+
 
 <input type="button" value="Store Text" onClick="{
    localStorage.setItem('myStoredText', document.getElementById('myText1').value)
@@ -27,9 +43,7 @@ Text example: <input id="myText1" type=text size=70 value="" placeholder="Write 
    document.getElementById('myText1').value = localStorage.getItem('myStoredText')
 }"> 
 
-   
-   
-<input type="range" min="0" max="100" step="1" value="" id="myMain" style=" position:absolute; top:40%; transform:rotate(270deg);"> <br>
+-->
 
 
 
