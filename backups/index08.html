@@ -1,0 +1,189 @@
+version: 0.3.24 <br>
+
+<script>
+ 
+ document.myTimer01 = 0
+ document.myMsPerMilliCode = 3000   // bare minimum
+ 
+ 
+function myCountDown(){
+ 
+ document.getElementById('myText1').value = parseInt(document.getElementById('myText1').value) - 1
+ document.getElementById('myMain').value  =  parseInt(document.getElementById('myText1').value)/1000
+ document.getElementById('myText3').value  =  parseFloat(document.getElementById('myText1').value)/1000
+ document.getElementById('mySave01').click()
+ 
+ 
+document.getElementById('mySpan01').style.backgroundColor = 'blue'       
+document.getElementById('mySpan01').style.color = 'yellow'   
+ 
+ 
+if (parseInt(document.getElementById('myText1').value) <= 30000){
+   document.getElementById('mySpan01').style.backgroundColor = 'green'       
+   document.getElementById('mySpan01').style.color = 'white'  
+}
+ 
+if (parseInt(document.getElementById('myText1').value) >= 70000){
+   document.getElementById('mySpan01').style.backgroundColor = 'red'       
+   document.getElementById('mySpan01').style.color = 'black'  
+}
+ 
+ 
+ 
+}   
+    
+</script>
+
+
+   
+
+   
+   
+   
+
+<body onload="{
+        
+              
+   myStorage = localStorage.getItem('myStoredText')
+   if(myStorage  != null){
+      document.getElementById('myText1').value = parseInt(myStorage) 
+      document.getElementById('myMain').value  = parseInt(myStorage) / 1000     
+    }
+              
+                            
+   myStorage2 = localStorage.getItem('myStoredText2')
+   if(myStorage2  != null){
+      let myNow = new Date().getTime();  
+      let myNew = myStorage - (((myNow -myStorage2)/10000000) * document.myMsPerMilliCode)
+              
+      if (myNew > 100000){myNew = 100000}        
+       //alert(myNew)       
+      document.getElementById('myText2').value = myNow 
+      document.getElementById('myText1').value = parseInt(myNew) 
+      document.getElementById('myMain').value  = parseInt(myNew)   / 1000  
+              
+      document.getElementById('myText3').value  = parseFloat(myNew)   / 1000  
+      myCountDown()
+    }
+              
+              
+   myStorageFit = localStorage.getItem('myStoredFit')
+   if(myStorageFit  != null){
+      document.getElementById('myFit').value = parseInt(myStorageFit)  
+    }            
+        
+                            
+   myStorageEat = localStorage.getItem('myStoredEat')
+   if(myStorageEat  != null){
+      document.getElementById('myEat').value = parseInt(myStorageEat)  
+    }  
+                            
+   myStorageMind = localStorage.getItem('myStoredMind')
+   if(myStorageMind   != null){
+      document.getElementById('myMind').value = parseInt(myStorageMind )  
+    }  
+              
+  document.myMsPerMilliCode =  3 + parseInt(myStorageFit) + parseInt(myStorageEat) + parseInt(myStorageMind)           
+  console.log(document.myMsPerMilliCode) 
+  clearInterval(document.myTimer01)
+  document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)               
+              
+              
+}">
+
+<body onunload="{
+   localstorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
+   localstorage.setItem('myStoredText2',document.getElementById('myText2').value)
+}">   
+ 
+ 
+ 
+ <h1 align=center>Healthy Brain</h1>
+
+
+
+<input id="mySave01" type="hidden" value="Store Text" onClick="{
+   localStorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
+   localStorage.setItem('myStoredText2', document.getElementById('myText2').value)
+   let myNow2 = new Date().getTime();  
+    document.getElementById('myText2').value = myNow2 
+}">
+
+<input type="hidden" value="Retrieve Text" onClick="{
+   document.getElementById('myText1').value = localStorage.getItem('myStoredText')
+}"> 
+
+ 
+  Actual:         <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
+  Now:            <input id="myText2" type=text size=70 value="" placeholder="Write here to store"><br>
+ 
+ <table border = 1>
+  
+  <tr><td>  Migraine Code: </td><td>   <input id="myText3" type=text size=70 value="" placeholder="Write here to store"></td></tr>
+  
+  
+  <tr><td> Healthy Eating: </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+      localStorage.setItem('myStoredEat', parseInt(this.value))                 
+      document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
+      console.log(document.myMsPerMilliCode) 
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)   
+   }" ></td></tr>
+  <tr><td> Exercise:</td><td>          <input id="myFit"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+      localStorage.setItem('myStoredFit', parseInt(this.value))     
+      document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
+      console.log(document.myMsPerMilliCode)  
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)   
+   }" > </td></tr>
+  <tr><td> Mellow:</td><td>            <input id="myMind"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+      localStorage.setItem('myStoredMind', parseInt(this.value))
+      document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
+      console.log(document.myMsPerMilliCode) 
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)   
+   }" ></td></tr>
+ </table> <br> <br>
+ 
+ <div id="myDiv01">...</div>
+   
+ <b onMouseOver="{
+     document.getElementById('myDiv01').innerHTML = 'Issues include: sugar, food with preservatives, canned foods and soups, MSG etc...'             
+                 
+  }">Issues: </b><input type=button value="1%" style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 1         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  
+  <input type=button value="Small 5%"  style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 5         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}"> 
+  
+ <input type=button value="Medium 10%"  style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 10         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  
+  
+ <input type=button value="Large 15%" style="font-size : 40px;" onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 15         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  <br> <br> <br>
+ 
+ <h3 align=center>Brain Concerns Chart:</h3>
+ <span id="mySpan01" style=" background:green; color:yellow;" >
+    
+<input type="range" min="0" max="100"  value="" id="myMain"  style="width:1200px;  " onchange="{
+   document.getElementById('myText1').value = parseInt(this.value) * 1000
+   document.getElementById('mySave01').click()
+}"> 
+  
+ </span>
+   
+ 
+
+ 
+  
