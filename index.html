@@ -1,6 +1,12 @@
-version: 0.0.16 <br>
+version: 0.0.17 <br>
 
-
+<script>
+ 
+function myCountdown(){
+  alert('hi')
+}   
+    
+</script>
 
 
    
@@ -15,11 +21,13 @@ version: 0.0.16 <br>
    
 
 <body onload="{
+   document.myTimer01 = setInterval(myCountDown(), 4000)           
    myStorage = localStorage.getItem('myStoredText')
    if(myStorage  != null){
       document.getElementById('myText1').value = myStorage 
       document.getElementById('myMain').value  = myStorage      
     }
+              
 }">
 
 <body onunload="{
@@ -28,36 +36,15 @@ version: 0.0.16 <br>
 
 Text example: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
 
-<input id="mySave01" type="button" value="Store Text" onClick="{
+<input id="mySave01" type="hidden" value="Store Text" onClick="{
    localStorage.setItem('myStoredText', document.getElementById('myText1').value)
- //  alert(document.getElementById('myText1').value + ' \nHas been stored')
- //  document.getElementById('myText1').value = ''
 }">
 
-<input type="button" value="Retrieve Text" onClick="{
+<input type="hidden" value="Retrieve Text" onClick="{
    document.getElementById('myText1').value = localStorage.getItem('myStoredText')
 }"> 
 
 
    
    
-   
-   
- <!--
-
-
-<input type="button" value="Store Text" onClick="{
-   localStorage.setItem('myStoredText', document.getElementById('myText1').value)
-   alert(document.getElementById('myText1').value + ' \nHas been stored')
-   document.getElementById('myText1').value = ''
-}">
-
-<input type="button" value="Retrieve Text" onClick="{
-   document.getElementById('myText1').value = localStorage.getItem('myStoredText')
-}"> 
-
--->
-
-
-
-
+  
