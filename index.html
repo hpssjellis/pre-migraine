@@ -1,24 +1,24 @@
-version: 0.0.6 <br>
+version: 0.0.7 <br>
 
 
 
 
 
 <body onload="{
-   myStorage = localStorage.getItem('myStoredText')
-   if(myStorage  != null){
-      document.getElementById('myText1').value = myStorage 
+   myStorage01 = localStorage.getItem('myStoredText01')
+   if(myStorage01  != null){
+      document.getElementById('myText01').value = myStorage01 
     }
 }"  onunload="{
-   localstorage.setItem('myStoredText', document.getElementById('myText1').value)
+   localstorage.setItem('myStoredText01', document.getElementById('myText01').value)
 }">   
 
    
    
-Text example: <input id="myText1" type=text size=70 value="" placeholder="Write here to store" onchange="{
-   localstorage.setItem('myStoredText', document.getElementById('myText1').value)
+Text example: <input id="myText01" type=text size=70 value="" placeholder="Write here to store" onchange="{
+   localstorage.setItem('myStoredText01', document.getElementById('myText01').value)
    alert('saved')
-   }"><br>
+}"><br>
 
 
 
