@@ -1,7 +1,8 @@
-version: 0.3.23 <br>
+version: 0.3.24 <br>
 
 <script>
  
+ document.myTimer01 = 0
  document.myMsPerMilliCode = 3000   // bare minimum
  
  
@@ -42,7 +43,6 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
 
 <body onload="{
         
-   document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)  
               
    myStorage = localStorage.getItem('myStoredText')
    if(myStorage  != null){
@@ -84,7 +84,11 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
     }  
               
   document.myMsPerMilliCode =  3 + parseInt(myStorageFit) + parseInt(myStorageEat) + parseInt(myStorageMind)           
-  console.log(document.myMsPerMilliCode)            
+  console.log(document.myMsPerMilliCode) 
+  clearInterval(document.myTimer01)
+  document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)               
+              
+              
 }">
 
 <body onunload="{
@@ -110,28 +114,34 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
 }"> 
 
  
+  Actual:         <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
+  Now:            <input id="myText2" type=text size=70 value="" placeholder="Write here to store"><br>
  
  <table border = 1>
   
-  <tr><td>  Actual: </td><td>          <input id="myText1" type=text size=70 value="" placeholder="Write here to store"></td></tr>
   <tr><td>  Migraine Code: </td><td>   <input id="myText3" type=text size=70 value="" placeholder="Write here to store"></td></tr>
-  <tr><td>  Now:  </td><td>            <input id="myText2" type=text size=70 value="" placeholder="Write here to store"></td></tr>
   
   
   <tr><td> Healthy Eating: </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredEat', parseInt(this.value))                 
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
-      console.log(document.myMsPerMilliCode)  
+      console.log(document.myMsPerMilliCode) 
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)   
    }" ></td></tr>
   <tr><td> Exercise:</td><td>          <input id="myFit"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredFit', parseInt(this.value))     
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
       console.log(document.myMsPerMilliCode)  
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)   
    }" > </td></tr>
   <tr><td> Mellow:</td><td>            <input id="myMind"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredMind', parseInt(this.value))
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
-      console.log(document.myMsPerMilliCode)  
+      console.log(document.myMsPerMilliCode) 
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)   
    }" ></td></tr>
  </table> <br> <br>
  
