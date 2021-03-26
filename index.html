@@ -1,13 +1,15 @@
-version: 0.0.31 <br>
+version: 0.0.32 <br>
 
 <script>
  
  document.myMsPerMilliCode = 4000
  
+ 
 function myCountDown(){
  
  document.getElementById('myText1').value = parseInt(document.getElementById('myText1').value) - 1
  document.getElementById('myMain').value  =  parseInt(document.getElementById('myText1').value)/1000
+ document.getElementById('myText3').value  =  parseInt(document.getElementById('myText1').value)/1000
  
 }   
     
@@ -54,9 +56,9 @@ function myCountDown(){
    localstorage.setItem('myStoredText2',document.getElementById('myText2').value)
 }">   
 
-Text example: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
-
-Text example: <input id="myText2" type=text size=70 value="" placeholder="Write here to store"><br>
+Actual: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
+Migraine Code: <input id="myText3" type=text size=70 value="" placeholder="Write here to store"><br>
+Now: <input id="myText2" type=text size=70 value="" placeholder="Write here to store"><br>
 
 <input id="mySave01" type="hidden" value="Store Text" onClick="{
    localStorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
