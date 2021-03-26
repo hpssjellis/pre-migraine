@@ -1,4 +1,4 @@
-version: 0.1.9 <br>
+version: 0.2.0 <br>
 
 <script>
  
@@ -92,5 +92,21 @@ function myCountDown(){
   <tr><td> Mellow:</td><td>            <input type=range value="" Min = 0 Max=100 style="width: 500px;" ></td></tr>
  </table>
    
-   
+<input type=button value=small onclick="{
+  document.getElementById('myMain').value += 5         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  
+  
+ <input type=button value=medium onclick="{
+  document.getElementById('myMain').value += 10         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  
+  
+ <input type=button value=large onclick="{
+  document.getElementById('myMain').value += 15         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  <br>
   
