@@ -1,4 +1,4 @@
-version: 0.0.32 <br>
+version: 0.0.33 <br>
 
 <script>
  
@@ -9,7 +9,7 @@ function myCountDown(){
  
  document.getElementById('myText1').value = parseInt(document.getElementById('myText1').value) - 1
  document.getElementById('myMain').value  =  parseInt(document.getElementById('myText1').value)/1000
- document.getElementById('myText3').value  =  parseInt(document.getElementById('myText1').value)/1000
+ document.getElementById('myText3').value  =  parseFloat(document.getElementById('myText1').value)/1000
  
 }   
     
@@ -46,7 +46,9 @@ function myCountDown(){
        //alert(myNew)       
       document.getElementById('myText2').value = myNow 
       document.getElementById('myText1').value = parseInt(myNew) 
-      document.getElementById('myMain').value  = parseInt(myNew)   / 1000          
+      document.getElementById('myMain').value  = parseInt(myNew)   / 1000  
+              
+      document.getElementById('myText3').value  = parseFloat(myNew)   / 1000  
     }
               
 }">
