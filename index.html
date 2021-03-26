@@ -1,4 +1,4 @@
-version: 0.0.23 <br>
+version: 0.0.24 <br>
 
 <script>
  
@@ -15,7 +15,7 @@ function myCountDown(){
    
    
 <input type="range" min="0" max="1000" step="1" value="" id="myMain"  style=" position:absolute; top:40%; transform:rotate(270deg); width:1000px; 
-   height:200px;  slider.style.background : `linear-gradient(to right, red 0%, red ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%)` " onchange="{
+   height:200px;  slider.style.background : linear-gradient(to right, red 0%, red ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%) " onchange="{
    document.getElementById('myText1').value = this.value
    document.getElementById('mySave01').click()
 }"> <br>
@@ -25,23 +25,34 @@ function myCountDown(){
    
 
 <body onload="{
-   document.myTimer01 = setInterval(myCountDown, 4000)           
+   document.myTimer01 = setInterval(myCountDown, 4000)  
+              
    myStorage = localStorage.getItem('myStoredText')
    if(myStorage  != null){
       document.getElementById('myText1').value = myStorage 
       document.getElementById('myMain').value  = myStorage      
     }
               
+                            
+   myStorage2 = localStorage.getItem('myStoredText2')
+   if(myStorage2  != null){
+      document.getElementById('myText2').value = myStorage 
+    }
+              
 }">
 
 <body onunload="{
    localstorage.setItem('myStoredText',document.getElementById('myText1').value)
+   localstorage.setItem('myStoredText2',document.getElementById('myText2').value)
 }">   
 
 Text example: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
 
+Text example: <input id="myText2" type=text size=70 value="" placeholder="Write here to store"><br>
+
 <input id="mySave01" type="hidden" value="Store Text" onClick="{
    localStorage.setItem('myStoredText', document.getElementById('myText1').value)
+   localStorage.setItem('myStoredText2', document.getElementById('myText2').value)
 }">
 
 <input type="hidden" value="Retrieve Text" onClick="{
