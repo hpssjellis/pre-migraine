@@ -1,4 +1,4 @@
-version: 0.0.22 <br>
+version: 0.0.23 <br>
 
 <script>
  
@@ -15,7 +15,7 @@ function myCountDown(){
    
    
 <input type="range" min="0" max="1000" step="1" value="" id="myMain" readonly style=" position:absolute; top:40%; transform:rotate(270deg); width:1000px; 
-   height:200px;  " onchange="{
+   height:200px;  slider.style.background : `linear-gradient(to right, red 0%, red ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%)` " onchange="{
    document.getElementById('myText1').value = this.value
    document.getElementById('mySave01').click()
 }"> <br>
