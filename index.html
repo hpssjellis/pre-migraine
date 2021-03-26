@@ -1,4 +1,4 @@
-version: 0.3.22 <br>
+version: 0.3.23 <br>
 
 <script>
  
@@ -118,17 +118,17 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
   <tr><td>  Now:  </td><td>            <input id="myText2" type=text size=70 value="" placeholder="Write here to store"></td></tr>
   
   
-  <tr><td> Healthy Eating: </td><td>   <input id="myEat" type=range value="" Min = 0 Max=100 style="width: 500px;" onchange="{
+  <tr><td> Healthy Eating: </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredEat', parseInt(this.value))                 
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
       console.log(document.myMsPerMilliCode)  
    }" ></td></tr>
-  <tr><td> Exercise:</td><td>          <input id="myFit"  type=range value="" Min = 0 Max=100 style="width: 500px;" onchange="{
+  <tr><td> Exercise:</td><td>          <input id="myFit"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredFit', parseInt(this.value))     
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
       console.log(document.myMsPerMilliCode)  
    }" > </td></tr>
-  <tr><td> Mellow:</td><td>            <input id="myMind"  type=range value="" Min = 0 Max=100 style="width: 500px;" onchange="{
+  <tr><td> Mellow:</td><td>            <input id="myMind"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredMind', parseInt(this.value))
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
       console.log(document.myMsPerMilliCode)  
