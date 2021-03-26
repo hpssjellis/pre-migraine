@@ -1,4 +1,4 @@
-version: 0.0.30 <br>
+version: 0.0.31 <br>
 
 <script>
  
@@ -6,8 +6,8 @@ version: 0.0.30 <br>
  
 function myCountDown(){
  
- document.getElementById('myMain').value  = parseInt(document.getElementById('myMain').value) - 1
- document.getElementById('myText1').value  = document.getElementById('myMain').value
+ document.getElementById('myText1').value = parseInt(document.getElementById('myText1').value) - 1
+ document.getElementById('myMain').value  =  parseInt(document.getElementById('myText1').value)/1000
  
 }   
     
@@ -18,7 +18,7 @@ function myCountDown(){
    
 <input type="range" min="0" max="100" step="1" value="" id="myMain"  style=" position:absolute; top:40%; transform:rotate(270deg); width:1000px; 
    height:200px;  slider.style.background : linear-gradient(to right, red 0%, red ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%) " onchange="{
-   document.getElementById('myText1').value = parseFloat(this.value)
+   document.getElementById('myText1').value = parseInt(this.value) * 1000
    document.getElementById('mySave01').click()
 }"> <br>
    
@@ -32,8 +32,8 @@ function myCountDown(){
               
    myStorage = localStorage.getItem('myStoredText')
    if(myStorage  != null){
-      document.getElementById('myText1').value = parseFloat(myStorage) 
-      document.getElementById('myMain').value  = parseInt(myStorage)      
+      document.getElementById('myText1').value = parseInt(myStorage) 
+      document.getElementById('myMain').value  = parseInt(myStorage) / 1000     
     }
               
                             
@@ -43,14 +43,14 @@ function myCountDown(){
       let myNew = myStorage - (((myStorage2 - myNow)/10000) * document.myMsPerMilliCode)
        //alert(myNew)       
       document.getElementById('myText2').value = myNow 
-      document.getElementById('myText1').value = parseFloat(myNew) 
-      document.getElementById('myMain').value  = parseInt(myNew)             
+      document.getElementById('myText1').value = parseInt(myNew) 
+      document.getElementById('myMain').value  = parseInt(myNew)   / 1000          
     }
               
 }">
 
 <body onunload="{
-   localstorage.setItem('myStoredText', parseFloat(document.getElementById('myText1').value))
+   localstorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
    localstorage.setItem('myStoredText2',document.getElementById('myText2').value)
 }">   
 
@@ -59,7 +59,7 @@ Text example: <input id="myText1" type=text size=70 value="" placeholder="Write 
 Text example: <input id="myText2" type=text size=70 value="" placeholder="Write here to store"><br>
 
 <input id="mySave01" type="hidden" value="Store Text" onClick="{
-   localStorage.setItem('myStoredText', parseFloat(document.getElementById('myText1').value))
+   localStorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
    localStorage.setItem('myStoredText2', document.getElementById('myText2').value)
 }">
 
