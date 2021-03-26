@@ -1,4 +1,4 @@
-version: 0.2.0 <br>
+version: 0.2.1 <br>
 
 <script>
  
@@ -93,19 +93,19 @@ function myCountDown(){
  </table>
    
 <input type=button value=small onclick="{
-  document.getElementById('myMain').value += 5         
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 5         
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
 }">  
   
  <input type=button value=medium onclick="{
-  document.getElementById('myMain').value += 10         
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 10         
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
 }">  
   
  <input type=button value=large onclick="{
-  document.getElementById('myMain').value += 15         
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 15         
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
 }">  <br>
