@@ -1,4 +1,4 @@
-version: 0.0.12 <br>
+version: 0.0.14 <br>
 
 
 
@@ -23,7 +23,9 @@ Text example: <input id="myText01" type=text size=70 value="" placeholder="Write
 
    
    
-<input type="range" min="0" max="1000" step="1" value="" id="myMain" style=" position:absolute; top:40%; transform:rotate(270deg); width:2000px; height:5000px; "> <br>
+<input type="range" min="0" max="1000" step="1" value="" id="myMain" style=" position:absolute; top:40%; transform:rotate(270deg); width:1000px; height:200px; " onchange="{
+   document.getElementById('myText01').value = this.value
+}"> <br>
    
    
    
