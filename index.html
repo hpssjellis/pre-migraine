@@ -1,11 +1,8 @@
 version: 0.0.2 <br>
 
-<input type="range" min="0" max="100" step="1" value="" id="myMain" style=" position:absolute; top:40%; transform:rotate(270deg);"> <br>
 
 
 
-
-<h2>t2a10-local-storage-name by Fred. Instructions:</h2>
 
 <body onload="{
    myStorage = localStorage.getItem('myStoredText')
@@ -15,7 +12,7 @@ version: 0.0.2 <br>
 }">
 
 <body onunload="{
-   localstorage.setItem('myStoredText',document.getElementById('myText1').value)
+   localstorage.setItem('myStoredText', document.getElementById('myText1').value)
 }">   
 
 Text example: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
@@ -29,6 +26,11 @@ Text example: <input id="myText1" type=text size=70 value="" placeholder="Write 
 <input type="button" value="Retrieve Text" onClick="{
    document.getElementById('myText1').value = localStorage.getItem('myStoredText')
 }"> 
+
+   
+   
+<input type="range" min="0" max="100" step="1" value="" id="myMain" style=" position:absolute; top:40%; transform:rotate(270deg);"> <br>
+
 
 
 
