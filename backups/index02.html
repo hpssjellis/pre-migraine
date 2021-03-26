@@ -1,0 +1,54 @@
+rsion: 0.0.21 <br>
+
+<script>
+ 
+function myCountDown(){
+ 
+ document.getElementById('myMain').value  = parseInt(document.getElementById('myMain').value) - 1
+ document.getElementById('myText1').value  = document.getElementById('myMain').value
+ 
+}   
+    
+</script>
+
+
+   
+   
+<input type="range" min="0" max="1000" step="1" value="" id="myMain" style=" position:absolute; top:40%; transform:rotate(270deg); width:1000px; 
+   height:200px; cursor: ew-resize; background: #434343; color: #43e5f7; " onchange="{
+   document.getElementById('myText1').value = this.value
+   document.getElementById('mySave01').click()
+}"> <br>
+   
+   
+   
+   
+
+<body onload="{
+   document.myTimer01 = setInterval(myCountDown, 4000)           
+   myStorage = localStorage.getItem('myStoredText')
+   if(myStorage  != null){
+      document.getElementById('myText1').value = myStorage 
+      document.getElementById('myMain').value  = myStorage      
+    }
+              
+}">
+
+<body onunload="{
+   localstorage.setItem('myStoredText',document.getElementById('myText1').value)
+}">   
+
+Text example: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
+
+<input id="mySave01" type="hidden" value="Store Text" onClick="{
+   localStorage.setItem('myStoredText', document.getElementById('myText1').value)
+}">
+
+<input type="hidden" value="Retrieve Text" onClick="{
+   document.getElementById('myText1').value = localStorage.getItem('myStoredText')
+}"> 
+
+
+   
+   
+  
