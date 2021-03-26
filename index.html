@@ -1,8 +1,8 @@
-version: 0.3.12 <br>
+version: 0.3.14 <br>
 
 <script>
  
- document.myMsPerMilliCode = 3000
+ document.myMsPerMilliCode = 3   // bare minimum
  
  
 function myCountDown(){
@@ -66,6 +66,25 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
       myCountDown()
     }
               
+              
+   myStorageFit = localStorage.getItem('myStoredFit')
+   if(myStorageFit  != null){
+      document.getElementById('myFit').value = parseInt(myStorageFit)  
+    }            
+        
+                            
+   myStorageEat = localStorage.getItem('myStoredEat')
+   if(myStorageEat  != null){
+      document.getElementById('myEat').value = parseInt(myStorageEat)  
+    }  
+                            
+   myStorageMind = localStorage.getItem('myStoredMind ')
+   if(myStorageMind   != null){
+      document.getElementById('myMind').value = parseInt(myStorageMind )  
+    }  
+              
+  document.myMsPerMilliCode =  3 + myStorageFit + myStorageEat + myStorageMind           
+              
 }">
 
 <body onunload="{
@@ -99,9 +118,15 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
   <tr><td>  Now:  </td><td>            <input id="myText2" type=text size=70 value="" placeholder="Write here to store"></td></tr>
   
   
-  <tr><td> Healthy Eating: </td><td>   <input type=range value="" Min = 0 Max=100 style="width: 500px;" ></td></tr>
-  <tr><td> Exercise:</td><td>          <input type=range value="" Min = 0 Max=100 style="width: 500px;" > </td></tr>
-  <tr><td> Mellow:</td><td>            <input type=range value="" Min = 0 Max=100 style="width: 500px;" ></td></tr>
+  <tr><td> Healthy Eating: </td><td>   <input id="myEat" type=range value="" Min = 0 Max=100 style="width: 500px;" onchange="{
+    localStorage.getItem('myStoredEat') = this.value
+   }" ></td></tr>
+  <tr><td> Exercise:</td><td>          <input id="myFit"  type=range value="" Min = 0 Max=100 style="width: 500px;" onchange="{
+    localStorage.getItem('myStoredFit') = this.value
+   }" > </td></tr>
+  <tr><td> Mellow:</td><td>            <input id="myMind"  type=range value="" Min = 0 Max=100 style="width: 500px;" onchange="{
+    localStorage.getItem('myStoredMind') = this.value
+   }" ></td></tr>
  </table> <br> <br>
  
  <div id="myDiv01">...</div>
