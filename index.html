@@ -1,4 +1,4 @@
-version: 0.2.1 <br>
+version: 0.2.2 <br>
 
 <script>
  
@@ -18,13 +18,7 @@ function myCountDown(){
 
 
    
-   
-<input type="range" min="0" max="100"  value="" id="myMain"  style=" position:absolute; top:40%; transform:rotate(270deg); width:1000px; 
-   height:200px;  slider.style.background : linear-gradient(to right, red 0%, red ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%) " onchange="{
-   document.getElementById('myText1').value = parseInt(this.value) * 1000
-   document.getElementById('mySave01').click()
-}"> <br>
-   
+
    
    
    
@@ -63,7 +57,7 @@ function myCountDown(){
  
  
  
- <h1 align=center>Brain Health</h1>
+ <h1 align=center>Brain Concerns</h1>
 
 
 
@@ -109,4 +103,17 @@ function myCountDown(){
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
 }">  <br>
+ 
+ 
+ 
+    
+<input type="range" min="0" max="100"  value="" id="myMain"  style=" position:absolute; top:40%;  width:1000px; 
+   height:200px;  slider.style.background : linear-gradient(to right, red 0%, red ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%) " onchange="{
+   document.getElementById('myText1').value = parseInt(this.value) * 1000
+   document.getElementById('mySave01').click()
+}"> <br>
+   
+ 
+ 
+ 
   
