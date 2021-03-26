@@ -1,4 +1,4 @@
-version: 0.0.36 <br>
+version: 0.1.0 <br>
 
 <script>
  
@@ -43,7 +43,7 @@ function myCountDown(){
    myStorage2 = localStorage.getItem('myStoredText2')
    if(myStorage2  != null){
       let myNow = new Date().getTime();  
-      let myNew = myStorage - (((myNow -myStorage2)/10000) * document.myMsPerMilliCode)
+      let myNew = myStorage - (((myNow -myStorage2)/100000) * document.myMsPerMilliCode)
               
       if (myNew > 100000){myNew = 100000}        
        //alert(myNew)       
