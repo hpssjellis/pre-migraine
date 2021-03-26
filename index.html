@@ -1,4 +1,4 @@
-version: 0.2.4 <br>
+version: 0.2.6 <br>
 
 <script>
  
@@ -105,18 +105,20 @@ function myCountDown(){
 }">  <br>
  
  
- 
+ <span id="mySpan01" style="width:100%;  height:200px; background:green; color:yellow">
     
 <input type="range" min="0" max="100"  value="" id="myMain"  style=" position:absolute; top:40%;  width:1000px; 
    height:200px;  slider.style.background : linear-gradient(to right, red 0%, red ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%) " onchange="{
    document.getElementById('myText1').value = parseInt(this.value) * 1000
    document.getElementById('mySave01').click()
 }"> <br>
+  
+ </span>
    
  
 <input type=button value=color onclick="{
-  document.getElementById('myMain').style.backgroundColor = 'red'       
-  document.getElementById('myMain').style.color = 'green'                                     
+  document.getElementById('mySpan01').style.backgroundColor = 'red'       
+  document.getElementById('mySpan01').style.color = 'green'                                     
 }">  <br>
  
   
