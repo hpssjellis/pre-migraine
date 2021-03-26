@@ -1,8 +1,8 @@
-version: 0.0.17 <br>
+version: 0.0.18 <br>
 
 <script>
  
-function myCountdown(){
+function myCountDown(){
   alert('hi')
 }   
     
@@ -21,7 +21,7 @@ function myCountdown(){
    
 
 <body onload="{
-   document.myTimer01 = setInterval(myCountDown(), 4000)           
+   document.myTimer01 = setInterval(myCountDown, 4000)           
    myStorage = localStorage.getItem('myStoredText')
    if(myStorage  != null){
       document.getElementById('myText1').value = myStorage 
