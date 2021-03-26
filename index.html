@@ -2,6 +2,8 @@ version: 0.0.25 <br>
 
 <script>
  
+ document.myMsPerMilliCode = 4000
+ 
 function myCountDown(){
  
  document.getElementById('myMain').value  = parseInt(document.getElementById('myMain').value) - 1
@@ -14,9 +16,9 @@ function myCountDown(){
 
    
    
-<input type="range" min="0" max="1000" step="1" value="" id="myMain"  style=" position:absolute; top:40%; transform:rotate(270deg); width:1000px; 
+<input type="range" min="0" max="100" step="1" value="" id="myMain"  style=" position:absolute; top:40%; transform:rotate(270deg); width:1000px; 
    height:200px;  slider.style.background : linear-gradient(to right, red 0%, red ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%) " onchange="{
-   document.getElementById('myText1').value = this.value
+  // document.getElementById('myText1').value = this.value
    document.getElementById('mySave01').click()
 }"> <br>
    
@@ -25,18 +27,24 @@ function myCountDown(){
    
 
 <body onload="{
-   document.myTimer01 = setInterval(myCountDown, 4000)  
+        
+   document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)  
               
    myStorage = localStorage.getItem('myStoredText')
    if(myStorage  != null){
       document.getElementById('myText1').value = myStorage 
-      document.getElementById('myMain').value  = myStorage      
+      document.getElementById('myMain').value  = parseInt(myStorage)      
     }
               
                             
    myStorage2 = localStorage.getItem('myStoredText2')
    if(myStorage2  != null){
-      document.getElementById('myText2').value = myStorage2 
+      let myNow = new Date().getTime();  
+      let myNew = myStorage - ((myStorage2 - myNow) * document.myMsPerMilliCode
+              
+      document.getElementById('myText2').value = myNow 
+      document.getElementById('myText1').value = myNew 
+      document.getElementById('myMain').value  = parseInt(myNew)             
     }
               
 }">
