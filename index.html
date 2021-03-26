@@ -1,4 +1,4 @@
-version: 0.3.3 <br>
+version: 0.3.4 <br>
 
 <script>
  
@@ -101,9 +101,11 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
   <tr><td> Healthy Eating: </td><td>   <input type=range value="" Min = 0 Max=100 style="width: 500px;" ></td></tr>
   <tr><td> Exercise:</td><td>          <input type=range value="" Min = 0 Max=100 style="width: 500px;" > </td></tr>
   <tr><td> Mellow:</td><td>            <input type=range value="" Min = 0 Max=100 style="width: 500px;" ></td></tr>
- </table>
+ </table> <br> <br>
+ 
+ 
    
-<input type=button value=small onclick="{
+<input type=button value=small style="font:40px" onclick="{
   document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 5         
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
@@ -119,7 +121,7 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
   document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 15         
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
-}">  <br>
+}">  <br> <br> <br>
  
  
  <span id="mySpan01" style=" background:green; color:yellow; height:100px; ">Brain Concerns Chart:
