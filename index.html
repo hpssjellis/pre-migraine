@@ -1,4 +1,4 @@
-Version: 0.3.33. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
+Version: 0.3.34. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
 
 <script>
  
@@ -42,6 +42,11 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
    
 
 <body onload="{
+    
+   myStorageMilliCode = localStorage.getItem('myStoredMilliCode')
+   if(myStorageMilliCode   != null){
+      document.myMsPerMilliCode = parseInt(myStorageMilliCode )  
+    }           
         
               
    myStorage = localStorage.getItem('myStoredText')
@@ -85,8 +90,11 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
               
   document.myMsPerMilliCode =  3 + parseInt(myStorageFit) + parseInt(myStorageEat) + parseInt(myStorageMind)           
   console.log(document.myMsPerMilliCode) 
+              
   clearInterval(document.myTimer01)
   document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)               
+  localstorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)
+              
               
               
 }">
@@ -126,22 +134,28 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
       localStorage.setItem('myStoredEat', parseInt(this.value))                 
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
       console.log(document.myMsPerMilliCode) 
+   
       clearInterval(document.myTimer01)
-      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)   
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)          
+      localstorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)
    }" ></td><td> Junk Food </td></tr>
   <tr><td> Exercise: </td><td> 2 hour daily workout  </td><td>        <input id="myFit"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredFit', parseInt(this.value))     
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
       console.log(document.myMsPerMilliCode)  
+   
       clearInterval(document.myTimer01)
-      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)   
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)    
+      localstorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)   
    }" ></td><td> Couch Potato </td></tr>
   <tr><td> Emotional: </td><td>  Mellow  </td><td>         <input id="myMind"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredMind', parseInt(this.value))
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
       console.log(document.myMsPerMilliCode) 
+   
       clearInterval(document.myTimer01)
-      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)   
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)      
+      localstorage.setItem('myStoredMilliCode', document.myMsPerMilliCode) 
    }" ></td><td> Stressed out </td></tr>
  </table> <br> <br>
 
