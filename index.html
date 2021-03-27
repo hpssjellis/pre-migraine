@@ -1,4 +1,4 @@
-Version: 0.3.46. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
+Version: 0.3.47. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
 
 <script>
  
@@ -66,13 +66,14 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
       console.log(myStorage)
       console.log('myStorage2')
       console.log(myStorage2)
+              
       let myNow = new Date().getTime();  
       console.log('myNow')
       console.log(myNow)
       let myChange = ( myNow - myStorage2 ) 
       console.log('myChange')
       console.log(myChange)
-      let myReduce =       myChange / document.myMsPerMilliCode   
+      let myReduce =       myChange * 1000 / document.myMsPerMilliCode   // oops made up math here :)
       console.log('myReduce')        
       console.log(myReduce)        
       let myNew = myStorage - myReduce
