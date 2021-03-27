@@ -1,4 +1,4 @@
-Version: 0.3.49. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
+Version: 0.3.50. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
 
 <script>
  
@@ -77,9 +77,13 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
       console.log('myReduce')        
       console.log(myReduce)        
       let myNew = myStorage - myReduce
+      
+      console.log('myNew')        
+      console.log(myNew)           
               
       if (myNew > 100000){myNew = 100000}  
-      console.log('myNew')        
+      if (myNew < 0){myNew = 0}  
+      console.log('myNew-scaled')        
       console.log(myNew)   
               
        //alert(myNew)       
