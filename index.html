@@ -1,4 +1,4 @@
-Version: 0.3.41. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
+Version: 0.3.43. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
 
 <script>
  
@@ -62,10 +62,12 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
                             
    myStorage2 = localStorage.getItem('myStoredText2')
    if(myStorage2  != null){
+      console.log('myStorage')
+      console.log(myStorage)
       console.log('myStorage2')
       console.log(myStorage2)
       let myNow = new Date().getTime();  
-      let myChange = ( myNow -myStorage2 ) / 1000000 
+      let myChange = ( myNow - myStorage2 ) / 1000 
       console.log('myChange')
       console.log(myChange)
       let myReduce =       myChange * document.myMsPerMilliCode   
