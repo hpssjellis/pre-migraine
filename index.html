@@ -1,4 +1,4 @@
-Version: 0.3.37. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
+Version: 0.3.38. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
 
 <script>
  
@@ -46,6 +46,8 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
    myStorageMilliCode = localStorage.getItem('myStoredMilliCode')
    if(myStorageMilliCode   != null){
       document.myMsPerMilliCode = parseInt(myStorageMilliCode )  
+      console.log('document.myMsPerMilliCode')        
+      console.log(document.myMsPerMilliCode)        
     }           
         
               
@@ -61,7 +63,10 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
       let myNow = new Date().getTime();  
       let myNew = myStorage - (((myNow -myStorage2)/10000000) * document.myMsPerMilliCode)
               
-      if (myNew > 100000){myNew = 100000}        
+      if (myNew > 100000){myNew = 100000}  
+      console.log('myNew')        
+      console.log(myNew)   
+              
        //alert(myNew)       
       document.getElementById('myText2').value = myNow 
       document.getElementById('myText1').value = parseInt(myNew) 
