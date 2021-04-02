@@ -1,4 +1,4 @@
-Version: 0.4.9  
+Version: 0.4.10  
 
 Started March 26th, 2021. Absolutely no base in any Science, more just my own thoughts after 27 years of migraine pain and 
 about 6 hours of programming. 
@@ -8,7 +8,7 @@ Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> 
  
  document.myTimer01 = 0
  document.myMsPerMilliCode = 3000   // overwritten
- document.levelReductionRate = 500000000  // in milliseconds but shown to mins or hours or days.
+ document.levelReductionRate = 500000000  // in milliseconds but shown in hours and mins
  
  function msToTime(duration) {
   var milliseconds = Math.floor((duration % 1000) / 100),
@@ -28,11 +28,12 @@ Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> 
 function myCountDown(){
  
  
- document.levelReductionRate =  document.myMsPerMilliCode * 200000
+ document.levelReductionRate =  document.myMsPerMilliCode * 400000   // random constant that seems to work
  
  document.getElementById('myText1').value = parseInt(document.getElementById('myText1').value) - 1
  document.getElementById('myMain').value  =  parseInt(document.getElementById('myText1').value)/1000
- document.getElementById('myText3').value  =  parseFloat(document.getElementById('myText1').value)/1000 + '   Level Reduction Rate:' +    msToTime(document.levelReductionRate)  
+ document.getElementById('myText3').value  =  parseFloat(document.getElementById('myText1').value)/1000 
+ document.getElementById('myText4').value  =  'Level Reduction Rate:' +  msToTime(document.levelReductionRate)  
 
 
  document.getElementById('mySave01').click()
@@ -175,7 +176,7 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
  
  <table border = 1>
   
-  <tr><td>  Migraine % Chance: </td><td> </td><td>   <input id="myText3" type=text size=70 style="font-size : 40px;" value="" placeholder="Write here to store"> </td><td>  </td></tr>
+  <tr><td>  Migraine % Chance: </td><td> </td><td>   <input id="myText3" type=text size=70 style="font-size : 40px;" value="" placeholder="Write here to store"> </td><td>  <input id="myText4" type=text size=70 style="font-size : 20px;" value="" placeholder="Write here to store"></td></tr>
   
   
   <tr><td> Food: </td><td> Healthy Meals </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
