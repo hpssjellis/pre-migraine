@@ -1,10 +1,23 @@
-Version: 0.4.0. Started March 26th, 2021. Absolutely no base in any Science, more just my own thoughts after 27 years of migraine pain and about 6 hours of programming. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
+Version: 0.4.1. Started March 26th, 2021. Absolutely no base in any Science, more just my own thoughts after 27 years of migraine pain and about 6 hours of programming. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
 
 <script>
  
  document.myTimer01 = 0
- document.myMsPerMilliCode = 3000   // bare minimum
+ document.myMsPerMilliCode = 3000   // overwritten
+ document.myRocksettaMigraineRate = 5000000  // in milliseconds but shown to mins or hours or days.
  
+ function msToTime(duration) {
+  var milliseconds = Math.floor((duration % 1000) / 100),
+    seconds = Math.floor((duration / 1000) % 60),
+    minutes = Math.floor((duration / (1000 * 60)) % 60),
+    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+
+  hours = (hours < 10) ? "0" + hours : hours;
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+  return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+}
  
 function myCountDown(){
  
@@ -200,6 +213,15 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
 }">  
+ 
+  <input type=button value="time"  style="font-size : 40px; " onclick="{
+    alert(msToTime(document.myRocksettaMigraineRate))                                          
+}">  
+ 
+ 
+ 
+ 
+
   
  <input type=button value="Large 15%" style="font-size : 40px;" onclick="{
   document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 15         
