@@ -9,6 +9,7 @@ Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> 
  document.myTimer01 = 0
  document.myMsPerMilliCode = 3000   // overwritten
  document.levelReductionRate = 500000000  // in milliseconds but shown in hours and mins
+ document.ConversionConstant = 20000  // To Adjust the rate to make sense
  
  function msToTime(duration) {
   var milliseconds = Math.floor((duration % 1000) / 100),
@@ -28,7 +29,7 @@ Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> 
 function myCountDown(){
  
  
- document.levelReductionRate =  document.myMsPerMilliCode * 60000   // random constant that seems to work
+ document.levelReductionRate =  document.myMsPerMilliCode * document.ConversionConstant   // random constant that seems to work
  
  document.getElementById('myText1').value = parseInt(document.getElementById('myText1').value) - 1
  document.getElementById('myMain').value  =  parseInt(document.getElementById('myText1').value)/1000
