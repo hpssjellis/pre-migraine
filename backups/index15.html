@@ -1,0 +1,289 @@
+Version: 0.4.34  <br>
+
+Started March 26th, 2021. Absolutely no base in any Science, just my own thoughts after 27 years of migraine pain (Strangely correlated with the 
+number of years I have been a parent) and it took about 6 hours to program this webpage page. <br>
+I do have a Chemistry Degree and worked as a trace substance Analytical Chemist, but what do I know!<br>  
+Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
+
+<script>
+ 
+ document.myTimer01 = 0
+ document.myMsPerMilliCode = 3000   // overwritten
+ document.levelReductionRate = 500000000  // overwritten in milliseconds but shown in hours and mins
+ document.ConversionConstant = 39000    // 43000  // To Adjust the rate to make sense
+ 
+ function msToTime(duration) {
+  var milliseconds = Math.floor((duration % 1000) / 100),
+    seconds = Math.floor((duration / 1000) % 60),
+    minutes = Math.floor((duration / (1000 * 60)) % 60),
+   // hours   = Math.floor((duration / (1000 * 60 * 60)) % 24);
+    hours   = Math.floor((duration / (1000 * 60 * 60)) );
+
+ // days = (days < 10) ? "0" + days : days;
+ // hours = (hours < 10) ? "0" + hours : hours;
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+  return hours + " hours, " + minutes + " minutes " + seconds + " seconds" 
+}
+ 
+function myCountDown(){
+ 
+ 
+ document.levelReductionRate =  document.myMsPerMilliCode * document.ConversionConstant   // random constant that seems to work
+ 
+ document.getElementById('myText1').value = parseInt(document.getElementById('myText1').value) - 1
+ document.getElementById('myMain').value  =  parseInt(document.getElementById('myText1').value)/1000
+ document.getElementById('myText3').value  =  parseFloat(document.getElementById('myText1').value)/1000 
+ document.getElementById('myText4').value  =  'Level Reduction Rate: ' +  msToTime(document.levelReductionRate)  
+
+
+ document.getElementById('mySave01').click()
+ 
+ 
+document.getElementById('mySpan01').style.backgroundColor = 'blue'       
+document.getElementById('mySpan01').style.color = 'yellow'   
+ 
+ 
+if (parseInt(document.getElementById('myText1').value) <= 33000){
+   document.getElementById('mySpan01').style.backgroundColor = 'green'       
+   document.getElementById('mySpan01').style.color = 'white'  
+}
+ 
+if (parseInt(document.getElementById('myText1').value) >= 66000){
+   document.getElementById('mySpan01').style.backgroundColor = 'red'       
+   document.getElementById('mySpan01').style.color = 'black'  
+}
+ 
+ 
+ 
+}   
+    
+</script>
+
+
+   
+
+   
+   
+   
+
+<body onload="{
+    
+   myStorageMilliCode = localStorage.getItem('myStoredMilliCode')
+   if(myStorageMilliCode   != null){
+      document.myMsPerMilliCode = parseInt(myStorageMilliCode )  
+      console.log('document.myMsPerMilliCode')        
+      console.log(document.myMsPerMilliCode)        
+    }           
+        
+              
+   myStorage = localStorage.getItem('myStoredText')
+   if(myStorage  != null){
+      console.log('myStorage')
+      console.log(myStorage)
+      document.getElementById('myText1').value = parseInt(myStorage) 
+      document.getElementById('myMain').value  = parseInt(myStorage) / 1000     
+    }
+              
+                            
+   myStorage2 = localStorage.getItem('myStoredText2')
+   if(myStorage2  != null){
+      console.log('myStorage')
+      console.log(myStorage)
+      console.log('myStorage2')
+      console.log(myStorage2)
+              
+      let myNow = new Date().getTime();  
+      console.log('myNow')
+      console.log(myNow)
+      let myChange = ( myNow - myStorage2 ) 
+      console.log('myChange')
+      console.log(myChange)
+      let myReduce =       myChange  / parseInt(document.myMsPerMilliCode)   // oops made up math here :)
+      console.log('myReduce')        
+      console.log(myReduce)        
+      let myNew = myStorage - myReduce
+      
+      console.log('myNew')        
+      console.log(myNew)           
+              
+      if (myNew > 100000){myNew = 100000}  
+      if (myNew < 0){myNew = 0}  
+      console.log('myNew-scaled')        
+      console.log(myNew)   
+              
+       //alert(myNew)       
+      document.getElementById('myText2').value = myNow 
+      document.getElementById('myText1').value = parseInt(myNew) 
+      document.getElementById('myMain').value  = parseInt(myNew)   / 1000  
+              
+      document.getElementById('myText3').value  = parseFloat(myNew)   / 1000  
+      myCountDown()
+    }
+              
+              
+   myStorageFit = localStorage.getItem('myStoredFit')
+   if(myStorageFit  != null){
+      document.getElementById('myFit').value = parseInt(myStorageFit)  
+    }            
+        
+                            
+   myStorageEat = localStorage.getItem('myStoredEat')
+   if(myStorageEat  != null){
+      document.getElementById('myEat').value = parseInt(myStorageEat)  
+    }  
+                            
+   myStorageMind = localStorage.getItem('myStoredMind')
+   if(myStorageMind   != null){
+      document.getElementById('myMind').value = parseInt(myStorageMind )  
+    }  
+              
+  document.myMsPerMilliCode =  3 + parseInt(myStorageFit) + parseInt(myStorageEat) + parseInt(myStorageMind)           
+  console.log(document.myMsPerMilliCode) 
+              
+  clearInterval(document.myTimer01)
+  document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)               
+  localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)
+              
+              
+              
+}">
+
+<body onunload="{
+   localStorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
+   localStorage.setItem('myStoredText2',document.getElementById('myText2').value)
+}">   
+ 
+ 
+ 
+ <h1 align=center>Brain Health</h1>
+
+
+
+<input id="mySave01" type="hidden" value="Store Text" onClick="{
+   localStorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
+   localStorage.setItem('myStoredText2', document.getElementById('myText2').value)
+   let myNow2 = new Date().getTime();  
+    document.getElementById('myText2').value = myNow2 
+}">
+
+<input type="hidden" value="Retrieve Text" onClick="{
+   document.getElementById('myText1').value = localStorage.getItem('myStoredText')
+}"> 
+
+ 
+ <input id="myText1" type="hidden" size=70 value="" placeholder="Write here to store"><br>
+<input id="myText2" type="hidden" size=70 value="" placeholder="Write here to store"><br>
+ 
+ <table border = 1>
+  
+  <tr><td>  </td><td> Migraine % Chance: --> </td><td>   <input id="myText3" type=text  style="font-size : 40px;" value="" placeholder="Write here to store"> </td><td>  <input id="myText4" type=text size=50 style="font-size : 20px;" value="" placeholder="Write here to store"></td></tr>
+  
+  
+  <tr><td> Food: </td><td> Healthy Meals </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+      localStorage.setItem('myStoredEat', parseInt(this.value))                 
+      document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
+      console.log(document.myMsPerMilliCode) 
+   
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)          
+      localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)
+   }" ></td><td> Junk Food </td></tr>
+  <tr><td> Exercise: </td><td> 2 hour daily workout  </td><td>        <input id="myFit"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+      localStorage.setItem('myStoredFit', parseInt(this.value))     
+      document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
+      console.log(document.myMsPerMilliCode)  
+   
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)    
+      localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)   
+   }" ></td><td> Couch Potato </td></tr>
+  <tr><td> Emotional: </td><td>  Mellow  </td><td>         <input id="myMind"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+      localStorage.setItem('myStoredMind', parseInt(this.value))
+      document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
+      console.log(document.myMsPerMilliCode) 
+   
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)      
+      localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode) 
+   }" ></td><td> Stressed out or in Withdrawal </td></tr>
+ </table> <br> <br>
+
+   
+</b><input type=button value="1%" style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 1         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  
+  <input type=button value="Small 5%"  style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 5         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}"> 
+  
+ <input type=button value="Medium 10%"  style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 10         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  
+ 
+
+ 
+ 
+ 
+
+  
+ <input type=button value="Large 15%" style="font-size : 40px;" onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 15         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  <br> <br> <br>
+ 
+ <h3 align=center>Brain Concerns Graph:</h3>
+ <span align=center id="mySpan01" style=" background:green; color:yellow;" >
+    
+<input type="range" min="0" max="100"  value="" id="myMain"  style="width:1000px;  " onchange="{
+   document.getElementById('myText1').value = parseInt(this.value) * 1000
+   document.getElementById('mySave01').click()
+}"> 
+  
+ </span><br><br>
+   
+  
+ <div id="myDiv01">
+  In the <font style="background:green; color:white">Green Zone:</font> theoretically less likely to have a migraine even with a short time around a migraine trigger <br><br>
+  In The <font style="background:blue; color:white">Blue Zone:</font> be careful of multiple migraine triggers such as: <br>Bright Lights, Aromas, Emotional Situations, Sudden Scares, High or Low blood Glucose, personal triggers ...<br><br>
+  In The <font style="background:red; color:white"> Red Zone:</font> be carful of even one of the above triggers, until your body has had time to process the issues. <br><br>
+ 
+ <b>Issues</b> Note: These are not necessarily the same as triggers<br> Think of them as foods that may be correlated with having a migraine 
+ within a few days of eating them.<br>
+ These issues are potential preparation for a migraine. Might be very different for different people, some general ones are: <br>
+ Poor Sleep, Screen Time, Emotional Situtions, Sugary Foods, Fruit, Cheeses, Preserved Food, Canned Foods, Soups, Alcohol, Deli Meats and Deli Foods, 
+ Tyramine containing foods <i>(Strong or aged cheeses, Smoked or processed meats, Pickled or fermented foods, Sauces,
+ Soybeans and soybean products, 
+ Snow peas, broad beans (fava beans) and their pods, 
+ Dried or overripe fruits. 
+ Meat tenderizers or meat prepared with tenderizers, 
+ Yeast-extract spreads, 
+ Alcoholic beverages, such as beer — especially tap or homebrewed beer — red wine, sherry and liqueurs, 
+  Improperly stored foods or spoiled foods)</i>, 
+ Fast Carbs <i>(Potatoes, White Rice, White Bread)</i> ...  <br> <br>
+  
+  
+ 1% very very small amount of an issue<br>
+ Small 5%, small serving or amount of an above issue<br>
+ Medium 10% Medium amount<br>
+ Large 15% Large amount of an above issue<br><br><br>
+  
+Note: Values are automatically stored for the web browser you are working on. Check back after to see if the values have dropped. You do not need to leave your web browser open.
+The rate of reduction is based on your typical: Food intake, Fitness, and emotional well being.<br>
+  
+  
+ </div>
+
+ 
+ <h6>Github at https://github.com/hpssjellis/pre-migraine</h6>
+ <h6>Twitter: <a href="https://twitter.com/rocksetta">@rocksetta</a></h6>
+ 
+  
