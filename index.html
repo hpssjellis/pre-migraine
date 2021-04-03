@@ -1,16 +1,43 @@
-Version: 0.3.51. Started March 26th, 2021. Absolutely no base in any Science. Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
+Version: 0.4.34  <br>
+
+Started March 26th, 2021. Absolutely no base in any Science, just my own thoughts after 27 years of migraine pain (Strangely correlated with the 
+number of years I have been a parent) and it took about 6 hours to program this webpage page. <br>
+I do have a Chemistry Degree and worked as a trace substance Analytical Chemist, but what do I know!<br>  
+Use at your Own Risk. By <a href=""https://twitter.com/rocksetta>@rocksetta</a> <br>
 
 <script>
  
  document.myTimer01 = 0
- document.myMsPerMilliCode = 3000   // bare minimum
+ document.myMsPerMilliCode = 3000   // overwritten
+ document.levelReductionRate = 500000000  // overwritten in milliseconds but shown in hours and mins
+ document.ConversionConstant = 39000    // 43000  // To Adjust the rate to make sense
  
+ function msToTime(duration) {
+  var milliseconds = Math.floor((duration % 1000) / 100),
+    seconds = Math.floor((duration / 1000) % 60),
+    minutes = Math.floor((duration / (1000 * 60)) % 60),
+   // hours   = Math.floor((duration / (1000 * 60 * 60)) % 24);
+    hours   = Math.floor((duration / (1000 * 60 * 60)) );
+
+ // days = (days < 10) ? "0" + days : days;
+ // hours = (hours < 10) ? "0" + hours : hours;
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+  return hours + " hours, " + minutes + " minutes " + seconds + " seconds" 
+}
  
 function myCountDown(){
  
+ 
+ document.levelReductionRate =  document.myMsPerMilliCode * document.ConversionConstant   // random constant that seems to work
+ 
  document.getElementById('myText1').value = parseInt(document.getElementById('myText1').value) - 1
  document.getElementById('myMain').value  =  parseInt(document.getElementById('myText1').value)/1000
- document.getElementById('myText3').value  =  parseFloat(document.getElementById('myText1').value)/1000
+ document.getElementById('myText3').value  =  parseFloat(document.getElementById('myText1').value)/1000 
+ document.getElementById('myText4').value  =  'Level Reduction Rate: ' +  msToTime(document.levelReductionRate)  
+
+
  document.getElementById('mySave01').click()
  
  
@@ -18,12 +45,12 @@ document.getElementById('mySpan01').style.backgroundColor = 'blue'
 document.getElementById('mySpan01').style.color = 'yellow'   
  
  
-if (parseInt(document.getElementById('myText1').value) <= 30000){
+if (parseInt(document.getElementById('myText1').value) <= 33000){
    document.getElementById('mySpan01').style.backgroundColor = 'green'       
    document.getElementById('mySpan01').style.color = 'white'  
 }
  
-if (parseInt(document.getElementById('myText1').value) >= 70000){
+if (parseInt(document.getElementById('myText1').value) >= 66000){
    document.getElementById('mySpan01').style.backgroundColor = 'red'       
    document.getElementById('mySpan01').style.color = 'black'  
 }
@@ -151,7 +178,7 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
  
  <table border = 1>
   
-  <tr><td>  Migraine % Chance: </td><td> </td><td>   <input id="myText3" type=text size=70 value="" placeholder="Write here to store"> </td><td>  </td></tr>
+  <tr><td>  </td><td> Migraine % Chance: --> </td><td>   <input id="myText3" type=text  style="font-size : 40px;" value="" placeholder="Write here to store"> </td><td>  <input id="myText4" type=text size=50 style="font-size : 20px;" value="" placeholder="Write here to store"></td></tr>
   
   
   <tr><td> Food: </td><td> Healthy Meals </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
@@ -200,6 +227,12 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
 }">  
+ 
+
+ 
+ 
+ 
+
   
  <input type=button value="Large 15%" style="font-size : 40px;" onclick="{
   document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 15         
@@ -223,8 +256,9 @@ if (parseInt(document.getElementById('myText1').value) >= 70000){
   In The <font style="background:blue; color:white">Blue Zone:</font> be careful of multiple migraine triggers such as: <br>Bright Lights, Aromas, Emotional Situations, Sudden Scares, High or Low blood Glucose, personal triggers ...<br><br>
   In The <font style="background:red; color:white"> Red Zone:</font> be carful of even one of the above triggers, until your body has had time to process the issues. <br><br>
  
- <b>Issues</b> Note: These are not triggers<br> 
- These are potential preparation for a migraine. Might be very different for different people, some general ones are: <br>
+ <b>Issues</b> Note: These are not necessarily the same as triggers<br> Think of them as foods that may be correlated with having a migraine 
+ within a few days of eating them.<br>
+ These issues are potential preparation for a migraine. Might be very different for different people, some general ones are: <br>
  Poor Sleep, Screen Time, Emotional Situtions, Sugary Foods, Fruit, Cheeses, Preserved Food, Canned Foods, Soups, Alcohol, Deli Meats and Deli Foods, 
  Tyramine containing foods <i>(Strong or aged cheeses, Smoked or processed meats, Pickled or fermented foods, Sauces,
  Soybeans and soybean products, 
