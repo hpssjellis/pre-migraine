@@ -190,7 +190,7 @@ if (parseInt(document.getElementById('myText1').value) >= 66000){
   <tr><td>  </td><td> Migraine % Chance: --> </td><td>   <input id="myText3" type=text  style="font-size : 40px;" value="" placeholder="Write here to store"> </td><td>  <input id="myText4" type=text size=50 style="font-size : 20px;" value="" placeholder="Write here to store"></td></tr>
   
   
-  <tr><td> Food: </td><td> Healthy Meals </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+  <tr><td> Food: </td><td> Healthy Meals with personal NaCl balence </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredEat', parseInt(this.value))                 
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
       console.log(document.myMsPerMilliCode) 
@@ -198,7 +198,7 @@ if (parseInt(document.getElementById('myText1').value) >= 66000){
       clearInterval(document.myTimer01)
       document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)          
       localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)
-   }" ></td><td> Junk Food </td></tr>
+   }" ></td><td> Junk Food. Note: table salt is an essential nutrient </td></tr>
   <tr><td> Exercise: </td><td> 2 hour daily workout  </td><td>        <input id="myFit"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredFit', parseInt(this.value))     
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
@@ -268,7 +268,7 @@ if (parseInt(document.getElementById('myText1').value) >= 66000){
  <b>Issues</b> Note: These are not necessarily the same as triggers<br> Think of them as foods that may be correlated with having a migraine 
  within a few days of eating them.<br>
  These issues are potential preparation for a migraine. Might be very different for different people, some general ones are: <br>
- Poor Sleep, Screen Time, Emotional Situtions, Sugary Foods, Fruit, Cheeses, Preserved Food, Canned Foods, Soups, Alcohol, Deli Meats and Deli Foods, 
+ Poor Sleep, Screen Time, MSG containing foods, Emotional Situtions, Sugary Foods, Fruit, Cheeses, Preserved Food, Canned Foods, Soups, Alcohol, Deli Meats and Deli Foods, 
  Tyramine containing foods <i>(Strong or aged cheeses, Smoked or processed meats, Pickled or fermented foods, Sauces,
  Soybeans and soybean products, 
  Snow peas, broad beans (fava beans) and their pods, 
