@@ -37,5 +37,7 @@ will add the quotes later
 
 
 
+101 no one can have one migraine ?? what about yoxins that effect Na or K
+
 
 
