@@ -41,3 +41,11 @@ will add the quotes later
 
 
 
+
+missed a few
+
+
+111 stroke connection
+
+
+
