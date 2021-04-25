@@ -53,4 +53,21 @@ missed a few
 116 special abilities
 
 
+125 50%-100% more salt than average.
+
+
+note: trend, migraine brain different not a range. i disagree.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
