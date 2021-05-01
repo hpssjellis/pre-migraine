@@ -16,6 +16,11 @@ https://hpssjellis.github.io/pre-migraine/
 ### Angela Stanton PhD  
 https://keto-mojo.com/article/meet-migraine-expert-angela-stanton-phd/
 
+## breathing properly
+
+https://manicmigraine.com/migraine/my-manic-migraine
+
+
 
 ### History of migraine:
 
