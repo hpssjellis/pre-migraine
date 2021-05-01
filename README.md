@@ -41,4 +41,8 @@ https://www.migraineagain.com/top-stars-who-get-migraines/
 
 
 
+## Research Electrolyte equilirium effected by...
+
+https://www.sciencedirect.com/science/article/pii/S1095643302003239
+
 
