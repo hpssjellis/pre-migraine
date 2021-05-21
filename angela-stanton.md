@@ -37,7 +37,7 @@ will add the quotes later
 
 
 
-101 no one can have one migraine ?? what about yoxins that effect Na or K
+101 no one can have one migraine ?? what about toxins that effect Na or K
 
 
 
@@ -50,7 +50,7 @@ missed a few
 113 doc trashing
 
 
-116 special abilities
+116 special abilities   "I also have extreme peripheral vision for sudden changes"
 
 
 125 50%-100% more salt than average.
