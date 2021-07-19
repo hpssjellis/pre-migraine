@@ -51,3 +51,19 @@ https://www.migraineagain.com/top-stars-who-get-migraines/
 https://www.sciencedirect.com/science/article/pii/S1095643302003239
 
 
+
+dr beth
+
+https://www.rocksetta.com/tensorflowjs/
+
+
+
+
+
+
+
+
+
+
+
+
