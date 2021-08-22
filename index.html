@@ -1,4 +1,4 @@
-Version: 0.6.5 <br><br>
+Version: 0.6.7 <br><br>
 
 Started March 26th, 2021. Absolutely no base in any Science, just my own thoughts after 27 years of migraine pain (Strangely correlated with the 
 number of years I have been a parent). I have however had regular sugar induced headaches all my life. The difference is that regular headaches 
@@ -189,7 +189,7 @@ if (parseInt(document.getElementById('myText1').value) >= 66000){
   <tr><td>  </td><td> Migraine % Chance: --> </td><td>   <input id="myText3" type=text  style="font-size : 40px;" value="" placeholder="Write here to store"> </td><td>  <input id="myText4" type=text size=50 style="font-size : 20px;" value="" placeholder="Write here to store"></td></tr>
   
   
-  <tr><td> Food: </td><td> Healthy Meals with personal NaCl balence </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+  <tr><td> Food: </td><td> Healthy Meals with personal amounts of Salt (NaCl), Potassium from Foods (avocado etc), Creatine from Protein (red meat/Salmon etc) </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredEat', parseInt(this.value))                 
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
       console.log(document.myMsPerMilliCode) 
@@ -197,7 +197,7 @@ if (parseInt(document.getElementById('myText1').value) >= 66000){
       clearInterval(document.myTimer01)
       document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)          
       localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)
-   }" ></td><td> Junk Food. Note: table salt is an essential nutrient </td></tr>
+   }" ></td><td> Junk Food. Note: table salt, is an essential nutrient, but also in Junk Foods </td></tr>
   <tr><td> Exercise: </td><td> 2 hour daily workout  </td><td>        <input id="myFit"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredFit', parseInt(this.value))     
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
