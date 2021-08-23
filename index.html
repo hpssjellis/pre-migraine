@@ -1,4 +1,4 @@
-<a Name="top"></a>Version: 0.7.2 <br>
+<a Name="top"></a>Version: 0.7.3 <br>
 <h2 align=center> My Personal Migraine Prevention Site </h2>
 
 
@@ -268,7 +268,7 @@ The basic concept below is to set the sliders depending on how you feel you are 
       document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)    
       localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)   
    }" ></td><td> Couch Potato </td></tr>
-  <tr><td> Emotional: </td><td>  Mellow  </td><td>         <input id="myMind"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+  <tr><td> Emotional: </td><td>  Mellow and breathing deeply  </td><td>         <input id="myMind"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
       localStorage.setItem('myStoredMind', parseInt(this.value))
       document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
       console.log(document.myMsPerMilliCode) 
@@ -276,7 +276,7 @@ The basic concept below is to set the sliders depending on how you feel you are 
       clearInterval(document.myTimer01)
       document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)      
       localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode) 
-   }" ></td><td> Stressed out or in Withdrawal </td></tr>
+   }" ></td><td> Stressed out or in Withdrawal, shallow breathing </td></tr>
  </table> <br> <br>
 
  <h5>Single Snacks of Issue Foods. Click the relevant buttons</h5>   
