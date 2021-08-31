@@ -1,0 +1,550 @@
+<a Name="top"></a>Version: 0.7.7 <br>
+<h2 align=center> My Personal Migraine Prevention Site </h2>
+
+
+So I take very complex Machine Learning used to train robots and simplify it so that average High School students can understand it. That is what I do. 
+Possibly Migraines are highly complex and not easy to solve, probably why there are so many snake oil type "cures" available which probably are a mix of
+helpful with the placebo effect with darn right scams.<br><br>
+
+
+<h6> Use at your Own Risk! By <a href=""https://twitter.com/rocksetta>@rocksetta</a>  <br>
+ Website: <a href="https://www.rocksetta.com/">www.rocksetta.com</a>
+</h6>
+
+This web site was started March 26th, 2021. Absolutely no bases in any Science, just my own thoughts after 27 years of migraine pain (Strangely correlated with the 
+number of years I have been a parent). 
+
+I have however had regular sugar induced headaches all my life. The difference is that regular headaches 
+get some relief using Tylenol. For me Migraines have a distinct <a href="https://www.dictionary.com/browse/prodrome">prodrome</a> a visual aura 20 minutes before pain and for which Tylenol has no effect.<br><br>
+
+
+
+See these sections: <br>
+<a href="#top">Top of page </a><br>
+<a href="#background">My Background</a><br>
+<a href="#solution">Migraine solutions</a><br>
+
+
+<a href="#RocksettaMigraineTesting"> Rocksetta Migraine Prevention Testing </a><br>
+<a href="#EocksettasLatestMigrainePrevention"> Latest Rocksetta Migraine Prevention Method</a><br>
+<a href="#RocksettaBasicConcept">Rocksetta Basic Migraine Prevention Concept</a><br>
+<a href="#RocksettaBasicTheory">Rocksetta Basic Migraine Prevention Theory</a><br>
+<a href="#Migraineurs">Possible Migraineurs now and from History:</a><br>
+<a href="#Bottom">Bottom of Rocksetta Migraine Prevention page</a><br>
+
+
+
+<a Name="background"></a> <h3> My Background</h3>
+
+I do have a Chemistry Degree and worked as a trace substance Analytical Chemist, but what does that mean.<br>  
+I have a teaching degree<br>
+I also have a diploma in Counselling<br>
+I have taught Science and Physics for many years.<br>
+I also simplify Machine Learning and other complex Robotics and coding tasks for students<br>
+I now teach Robotics, Coding, Animation and 3D Printing in BC, Canada<br>
+
+
+
+About 20 years ago I used to make computer programs to monitor which foods correlated with my Migraines, but for the last
+10 years I have just eaten a mainly meat and vegetables (typically high in Potassium) low salt diet, with minimal fruits such as : blueberries, melons, kiwi.
+that has done fine at migraine prevention as long as I stick to it. Unfortunately sticking to my program means having very
+little of the food listed below in the <a href="#RocksettaMigraineTesting"> Rocksetta Migraine Prevention Testing </a> which happen to be all the foods that taste good<br><br>
+For the last 10 years I have basically had about a migraine every 2 weeks, since I can't just eat meat and vegetables.<br>
+
+
+
+
+
+
+
+
+<a Name="solution"></a><h3>Migraine solutions</h3>
+This is the part that is probably best to talk to your Doctor instead of taking advise from some hack on the internet.<br>
+This webpage is about prevention, but if I do  get a migraine aura, I first try Angela Stantons
+bit of salt under the tongue. If that works to reduce the aura, I have some salt in water, I then might have some creatine monohydrate in water, if that doesn't 
+help reduce the aura, to prevent any pain I take my 25 mg 
+co-sumatriptan under my tongue until it fully dissolves. It tastes terrible and I feel crappy for 24 hours, but at least I then have no pain.<br>
+
+
+
+
+
+
+
+<script>
+ 
+ document.myTimer01 = 0
+ document.myMsPerMilliCode = 3000   // overwritten
+ document.levelReductionRate = 500000000  // overwritten in milliseconds but shown in hours and mins
+ document.ConversionConstant = 39000    // 43000  // To Adjust the rate to make sense
+ 
+ function msToTime(duration) {
+  var milliseconds = Math.floor((duration % 1000) / 100),
+    seconds = Math.floor((duration / 1000) % 60),
+    minutes = Math.floor((duration / (1000 * 60)) % 60),
+   // hours   = Math.floor((duration / (1000 * 60 * 60)) % 24);
+    hours   = Math.floor((duration / (1000 * 60 * 60)) );
+
+ // days = (days < 10) ? "0" + days : days;
+ // hours = (hours < 10) ? "0" + hours : hours;
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+  return hours + " hours, " + minutes + " minutes " + seconds + " seconds" 
+}
+ 
+function myCountDown(){
+ 
+ 
+ document.levelReductionRate =  document.myMsPerMilliCode * document.ConversionConstant   // random constant that seems to work
+ 
+ document.getElementById('myText1').value = parseInt(document.getElementById('myText1').value) - 1
+ document.getElementById('myMain').value  =  parseInt(document.getElementById('myText1').value)/1000
+ document.getElementById('myText3').value  =  parseFloat(document.getElementById('myText1').value)/1000 
+ document.getElementById('myText4').value  =  'Level Reduction Rate: ' +  msToTime(document.levelReductionRate)  
+
+
+ document.getElementById('mySave01').click()
+ 
+ 
+document.getElementById('mySpan01').style.backgroundColor = 'blue'       
+document.getElementById('mySpan01').style.color = 'yellow'   
+ 
+ 
+if (parseInt(document.getElementById('myText1').value) <= 33000){
+   document.getElementById('mySpan01').style.backgroundColor = 'green'       
+   document.getElementById('mySpan01').style.color = 'white'  
+}
+ 
+if (parseInt(document.getElementById('myText1').value) >= 66000){
+   document.getElementById('mySpan01').style.backgroundColor = 'red'       
+   document.getElementById('mySpan01').style.color = 'black'  
+}
+ 
+ 
+ 
+}   
+    
+</script>
+
+
+   
+
+   
+   
+   
+
+<body onload="{
+    
+   myStorageMilliCode = localStorage.getItem('myStoredMilliCode')
+   if(myStorageMilliCode   != null){
+      document.myMsPerMilliCode = parseInt(myStorageMilliCode )  
+      console.log('document.myMsPerMilliCode')        
+      console.log(document.myMsPerMilliCode)        
+    }           
+        
+              
+   myStorage = localStorage.getItem('myStoredText')
+   if(myStorage  != null){
+      console.log('myStorage')
+      console.log(myStorage)
+      document.getElementById('myText1').value = parseInt(myStorage) 
+      document.getElementById('myMain').value  = parseInt(myStorage) / 1000     
+    }
+              
+                            
+   myStorage2 = localStorage.getItem('myStoredText2')
+   if(myStorage2  != null){
+      console.log('myStorage')
+      console.log(myStorage)
+      console.log('myStorage2')
+      console.log(myStorage2)
+              
+      let myNow = new Date().getTime();  
+      console.log('myNow')
+      console.log(myNow)
+      let myChange = ( myNow - myStorage2 ) 
+      console.log('myChange')
+      console.log(myChange)
+      let myReduce =       myChange  / parseInt(document.myMsPerMilliCode)   // oops made up math here :)
+      console.log('myReduce')        
+      console.log(myReduce)        
+      let myNew = myStorage - myReduce
+      
+      console.log('myNew')        
+      console.log(myNew)           
+              
+      if (myNew > 100000){myNew = 100000}  
+      if (myNew < 0){myNew = 0}  
+      console.log('myNew-scaled')        
+      console.log(myNew)   
+              
+       //alert(myNew)       
+      document.getElementById('myText2').value = myNow 
+      document.getElementById('myText1').value = parseInt(myNew) 
+      document.getElementById('myMain').value  = parseInt(myNew)   / 1000  
+              
+      document.getElementById('myText3').value  = parseFloat(myNew)   / 1000  
+      myCountDown()
+    }
+              
+              
+   myStorageFit = localStorage.getItem('myStoredFit')
+   if(myStorageFit  != null){
+      document.getElementById('myFit').value = parseInt(myStorageFit)  
+    }            
+        
+                            
+   myStorageEat = localStorage.getItem('myStoredEat')
+   if(myStorageEat  != null){
+      document.getElementById('myEat').value = parseInt(myStorageEat)  
+    }  
+                            
+   myStorageMind = localStorage.getItem('myStoredMind')
+   if(myStorageMind   != null){
+      document.getElementById('myMind').value = parseInt(myStorageMind )  
+    }  
+              
+  document.myMsPerMilliCode =  3 + parseInt(myStorageFit) + parseInt(myStorageEat) + parseInt(myStorageMind)           
+  console.log(document.myMsPerMilliCode) 
+              
+  clearInterval(document.myTimer01)
+  document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)               
+  localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)
+              
+              
+              
+}">
+
+<body onunload="{
+   localStorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
+   localStorage.setItem('myStoredText2',document.getElementById('myText2').value)
+}">   
+ 
+ 
+ 
+ <h1 align=center>Brain Health</h1>
+ <h5>Self saving chart</h5>
+I used this concept before finding my <a href="#EocksettasLatestMigrainePrevention"> Latest Rocksetta Migraine Prevention Method</a><br><br>
+The basic concept below is to set the sliders depending on how you feel you are for the three categories: Food, exercise, emotional. Then click the buttons below when you have one 
+ of the substances that might cause migraines. Note: you can actually just drag the slider to whatever starting point you want. A cookie might be a small issue, whereas a full 
+ plate of MSG containing Chineese food might be a large issue button to click.
+ Then watch the line scale and wait until you are back in the green before having another "issue" food. Note The Level Reduction Rate, that basically says how long it is predicted 
+ to take to reduce one level. Such as going from level red to blue would take that amount of time. It is effected by the sliders.
+
+<br><br>
+<input id="mySave01" type="hidden" value="Store Text" onClick="{
+   localStorage.setItem('myStoredText', parseInt(document.getElementById('myText1').value))
+   localStorage.setItem('myStoredText2', document.getElementById('myText2').value)
+   let myNow2 = new Date().getTime();  
+    document.getElementById('myText2').value = myNow2 
+}">
+
+<input type="hidden" value="Retrieve Text" onClick="{
+   document.getElementById('myText1').value = localStorage.getItem('myStoredText')
+}"> 
+
+ 
+ <input id="myText1" type="hidden" size=70 value="" placeholder="Write here to store"><br>
+<input id="myText2" type="hidden" size=70 value="" placeholder="Write here to store"><br>
+ 
+ <table border = 1>
+  
+  <tr><td>  </td><td> Migraine % Chance: --> </td><td>   <input id="myText3" type=text  style="font-size : 40px;" value="" placeholder="Write here to store"> </td><td>  <input id="myText4" type=text size=50 style="font-size : 20px;" value="" placeholder="Write here to store"></td></tr>
+  
+  
+  <tr><td> Food: </td><td> Healthy Meals with personal amounts of Salt (NaCl), Potassium from Foods (avocado etc), Creatine from Protein (red meat/salmon or creatine monohydrate) </td><td>   <input id="myEat" type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+      localStorage.setItem('myStoredEat', parseInt(this.value))                 
+      document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
+      console.log(document.myMsPerMilliCode) 
+   
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)          
+      localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)
+   }" ></td><td> Junk Food. Note: table salt, is an essential nutrient, but also in Junk Foods </td></tr>
+  <tr><td> Exercise: </td><td> 2 hour daily workout  </td><td>        <input id="myFit"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+      localStorage.setItem('myStoredFit', parseInt(this.value))     
+      document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
+      console.log(document.myMsPerMilliCode)  
+   
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)    
+      localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)   
+   }" ></td><td> Couch Potato </td></tr>
+  <tr><td> Emotional: </td><td>  Mellow and breathing deeply  </td><td>         <input id="myMind"  type=range value="" Min = 0 Max=1000 style="width: 500px;" onchange="{
+      localStorage.setItem('myStoredMind', parseInt(this.value))
+      document.myMsPerMilliCode =  3 + parseInt(document.getElementById('myFit').value) + parseInt(document.getElementById('myEat').value) + parseInt(document.getElementById('myMind').value)           
+      console.log(document.myMsPerMilliCode) 
+   
+      clearInterval(document.myTimer01)
+      document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)      
+      localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode) 
+   }" ></td><td> Stressed out or in Withdrawal, shallow breathing </td></tr>
+ </table> <br> <br>
+
+ <h5>Single Snacks of Issue Foods. Click the relevant buttons</h5>   
+</b><input type=button value="1%" style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 1         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  
+  <input type=button value="Small 5%"  style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 5         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}"> 
+  
+ <input type=button value="Medium 10%"  style="font-size : 40px; " onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 10         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  
+ 
+
+ 
+ 
+ 
+
+  
+ <input type=button value="Large 15%" style="font-size : 40px;" onclick="{
+  document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 15         
+  document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
+  document.getElementById('mySave01').click()                                          
+}">  <br> <br> <br>
+ 
+ <h3 align=center>Brain Concerns Graph:</h3>
+ <span align=center id="mySpan01" style=" background:green; color:yellow;" >
+    
+<input type="range" min="0" max="100"  value="" id="myMain"  style="width:1000px;  " onchange="{
+   document.getElementById('myText1').value = parseInt(this.value) * 1000
+   document.getElementById('mySave01').click()
+}"> 
+  
+ </span><br><br>
+   
+  
+ <div id="myDiv01">
+  In the <font style="background:green; color:white">Green Zone:</font> theoretically less likely to have a migraine even with a short time around a migraine trigger <br><br>
+  In The <font style="background:blue; color:white">Blue Zone:</font> be careful of multiple migraine triggers such as: <br>Bright Lights, Aromas, Emotional Situations, Sudden Scares, High or Low blood Glucose, personal triggers ...<br><br>
+  In The <font style="background:red; color:white"> Red Zone:</font> be careful of even one of the above triggers, until your body has had time to process the issues. <br><br>
+  
+  <hr><br>
+ 
+ <b>Issues</b> Note: These are not necessarily the same as triggers<br> Think of them as foods that may be correlated with having a migraine 
+ within a few days of eating them.<br>
+ These issues are potential preparation for a migraine. Might be very different for different people, some general ones are: <br>
+ Poor Sleep, Screen Time, MSG containing foods, Emotional Situtions, Sugary Foods, Fruit, Cheeses, Preserved Food, Canned Foods, Soups, Alcohol, Deli Meats and Deli Foods, 
+ Tyramine containing foods <i>(Strong or aged cheeses, Smoked or processed meats, Pickled or fermented foods, Sauces,
+ Soybeans and soybean products, 
+ Snow peas, broad beans (fava beans) and their pods, 
+ Dried or overripe fruits. 
+ Meat tenderizers or meat prepared with tenderizers, 
+ Yeast-extract spreads, 
+ Alcoholic beverages, such as beer — especially tap or homebrewed beer — red wine, sherry and liqueurs, 
+  Improperly stored foods or spoiled foods)</i>, 
+ Fast Carbs <i>(Potatoes, White Rice, White Bread)</i> ...  <br> <br>
+  
+  
+ 1% very very small amount of an issue<br>
+ Small 5%, small serving or amount of an above issue<br>
+ Medium 10% Medium amount<br>
+ Large 15% Large amount of an above issue<br><br><br>
+  
+Note: Values are automatically stored for the web browser you are working on. Check back after to see if the values have dropped. You do not need to leave your web browser open.
+The rate of reduction is based on your typical: Food intake, Fitness, and emotional well being.<br>
+  
+  
+ </div>
+
+ 
+ 
+ 
+ <h3><a name="RocksettaMigraineTesting"> Rocksetta Migraine Prevention Testing </a></h3>
+
+<ol> Rocksetta Migraine Prevention Method Testing. If your Migraine Prevention can't pass these tests, do you want the prevention?
+<li> Day 1: (sugar) Have one Chocolate Chip cookie
+<li> Day 2: (Sugar) "Treats: "Binge on Chocolate Chip coookies!
+<li> Day 3: (Carbs) "Carbs: "White Bread, Potatoes, White Rice, Pasta 
+ 
+<li> Day 4: (Sugar) "Glucose: " While eating normally, have all the desserts you haven't had for ages.
+<li> Day 5: (Fructose) "Fruits: " Have some of the fruit you haven't had for a while. (This one is hard for me)
+<li> Day 6: (Preservatives) Costco Prepped meals you still need to cook, Sausages, Preserved Deli Meat
+<li> Day 7: (Preservatives) "Sauces: " Salad Dressings, BBQ sauce, Honey Garlic Sauce, Sweet Red Chilli Pepper Sauce
+<li> Day 8: (Dairy) Have a Dairy day: Milk,  Chocolat Milk, Ice Cream,  Yogurt, Sour Cream, Cheese.
+ 
+<li> Day 9: (MSG) "MSG: "Chineese food, Campbell's Soup, Sushi, Instant Noodles
+<li> Day 10: (Tannins, Alcohol, Tyramine) "Wine And Cheese Party: " Red Wine and Aged cheese and Cheesecake. 
+<li> Day 11: (Alcohol) "Poker Game: " Have a few Beers, Pizza and Chips
+<li> Day 12: (Alcohol) "Wedding: " Champagne, Scotch, Roast Beef, Pasta, chocolate desserts
+ </ol> 
+ 
+ If your migraine prevention can pass the above steps, it might be a very good prevention for you.<br>
+ If your Migraines are so life alteringly horrible that you are willing to live without the steps above you might want to try 
+ <a href="https://scholar.google.co.in/citations?user=Fq3rZhAAAAAJ&hl=en">Angela Stanton's</a>: Salt, Potassium, Keto Protocol with
+ her intense facebook page at 
+ <a href="https://www.facebook.com/groups/MigraineSufferers/">Migraine Sufferers who Want to be Cured by the Stanton Migraine Protocol</a><br><br>
+ 
+ 
+ <h3><a name="RocksettaLatestMigrainePrevention"> Latest Rocksetta Migraine Prevention</a></h3>
+ 
+ <h3>The Rocksetta 3 McDouble, Salted Avocado Migraine Prevention</h3>
+ To be fair it should be called the "5 Gram Creatine, Salted Avocado Migraine Prevention", since no one should ever have 3 McDoubles a day unless they are 
+ running a full marathon or swimming/biking for a few hours, 
+ but that is what you might have to eat to absorb 2-5 grams of Creatine, reference <a href="https://www.medicalnewstoday.com/articles/263269#uses">here</a><br>
+ A 2020 reference for Creatine and migraine is <a href="https://www.semanticscholar.org/paper/Creatine-loading-for-chronic-migraine-Ostojic/bc0a39a575419bc3f704839bbdd27473c596a0c9">here</a>
+ <br>
+ 
+ <h3><a name="RocksettaBasicConcept"> Basic Rocksetta Migraine Prevention Concept: </a></h3>
+  <ol> 
+ <li> Morning have salted high Potassium low sugar foods like Avocado's, Sweat Potatoes, Mushrooms and Eggs.
+ <li> During the day eat normally and hydrate with occasional small amounts of salt
+ <li> Normal dinner but have more red meat/salmon and salt.
+ <li> Have a bit of Creatine Monohydrate (2-5 grams) some time during the day. (Body builders use it to store energy for the brain and muscles and help retain water in the cells)
+</ol> <br>
+  
+  
+  
+ <h3><a name="RocksettaBasicTheory">Rocksetta Basic Migraine Prevention Theory</a> </h3>
+ Probably all wrong, but I make decisions based on a theories<br><br>
+ 
+ In the following GIF The green area shows many brain nutrients that have higher or lower concentrations in the green zone which is fine, whenever a 
+ nutrient moves to the red zone their is a possiblity of a trigger firing a migraine. If many nutrients are in the red zone either too high or too low there 
+ is an increased chance of having a trigger activate a migraine. The animation is much faster than what would happen in real life.<br>
+ These Visualizations hopefully show the complexity of what might be happenning for Migraineurs in the hard to measure Intracellular fluids of Brain Cells. <br>
+ Unlike the diabetic for which blood glucose monitors work well, we don't know if Blood, Sweat, Tears or Urine analysis gives an accurate measurement of what is happening for nutrients 
+ inside brain cells.<br>
+ 
+ <table border=1>
+ 
+ <tr><td><img src="pre-migraine-diabetic0001-0250.gif" width="600"></td><td>Artistic Visualization of Blood Glucose levels fluctuating for a Diabetic</td></tr>
+ <tr><td><img src="pre-migraine-normal0001-0250.gif" width="600"></td><td>Artistic Visualization of a person who does not get Migraines </td></tr>
+ <tr><td><img src="pre-migrain02-shadeless-movie0001-0250.gif" width="600"></td><td>Now look at an Artistic Visualization of Multiple Nutrients fluctuating in the Intracellular fluid  of brain cells</td></tr>
+ <tr><td><img src="pre-migraine-emotion0001-0250.gif" width="600"></td><td>Now look at an Artistic Visualization of if the acceptable (green) levels are constantly changing based on Stress, exercise, Environmental Chemicals</td></tr>
+ 
+ </table>
+ 
+ 
+ 
+<ol>  
+<li> Just like when the stomach is empty and the body needs nutrients we get mild discomfort, tummy rumblings then later uncomfortable hunger pains, 
+ but when the mind needs nutrients, it causes prodromes (weird auras, tummy issues, etc look it up) and if the brain doesn't get those needed nutrients 
+ it is primed to react to a migraine trigger: bright lights, powerful smells, emotional situations... causing the cascade effect of the pain of a migraine. 
+<li> Migraineurs seem very sensitive to sugar balance, like a diabetic however with much more complex other nutrients in balance as well
+<li> The brain needs a lot of oxygen, if you get a prodrome (aura etc) trying some deep breathing.
+<li> Many modern chemicals and preservatives can effect the bodies ability to absorb the nutrients the brain needs
+<li> Stess also probably effects the bodies ability to absorb or balance electrolytes/Creatine/Glucose
+<li> Hydration helps flush some of these chemcials from your body over the course of a few days
+<li> There are lots of needed electrolytes, but the brain is very sensitive to Sodium and Potassium balance, if you hydrate then you will need more of these electrolytes
+<li> If you have a diet high in Potassium from foods you eat then (Care of Angela Stanton) the sodium balance can be achieved very quickly by putting salt under your tongue or drinking 1/8 teaspoon salt in water.      
+<li> Red meats and salmon are high in Creatine which supplies energy and retains hydration for the brain and muscles. Possible Migraineurs have issues with low Creatine levels.
+<li> Body builders often use 5 grams of Creatine Monohydrate daily, for some reason this massively improved my migraine prevention.  
+<li> If 5 grams Creatine (or lots of salmon and red meats) works for you, then try to reduce it to 4 grams and see if that still helps.
+<li> Also reduce your potassium foods intake and salt intake. The goal is to take only what is needed to prevent migraines.
+<li> This goal may take me a few years to achieve, possibly there are more nutrients the brain needs
+<li> I will test if during non stressful times any of this is needed and I just stick to meat and vegetable.
+ <li> Perhaps only creatine, salt, potassium foods on the weekends
+  
+ 
+ 
+ 
+ </ol> <br>
+  
+  
+  
+ So far this method seems to be doing well with the tests above.
+ I will not know for sure if this method works fully until I start teaching school in September. Last year on startup, when I had to teach
+ some students in person while teaching an online class I had 5 migraines in 10 days! Obviously stress has something to do with Migraines.
+ 
+  <h3><a name="Migraineurs"></a> Possible Migraineurs now and from History:</h3>
+ Note: We can assume most of these people did not have a satisfactory way of dealing with their migraines.
+  <ol> 
+   
+   
+<li><a href="https://www.google.com/search?q=migraine+Virginia+Woolf">Virginia Woolf</a>
+<li><a href="https://www.google.com/search?q=migraine+Elizabeth+Taylor">Elizabeth Taylor</a>
+<li><a href="https://www.google.com/search?q=migraine+Anne+Frank">Anne Frank</a> 
+ 
+ 
+<li><a href="https://www.google.com/search?q=migraine+Charles+Darwin">Charles Darwin</a>
+<li><a href="https://www.google.com/search?q=migraine+Vincent+Van+Gogh">Vincent Van Gogh</a>
+<li><a href="https://www.google.com/search?q=migraine+Claude+Monet">Claude Monet</a>
+<li><a href="https://www.google.com/search?q=migraine+Julius+Caesar">Julius Caesar</a>
+<li><a href="https://www.google.com/search?q=migraine+Sigmund+Freud">Sigmund Freud</a>
+<li><a href="https://www.google.com/search?q=migraine+John+F+Kennedy">John F Kennedy</a>
+<li><a href="https://www.google.com/search?q=migraine+">Napoleon Bonaparte</a>
+<li>Thomas Jefferson
+<li>Elvis Presley  
+<li>Ulysses S. Grant 
+<li>Lewis Carroll
+<li>Miguel de Cervantes
+<li>Robert E Lee 
+<li>Fredrich Nietzche
+<li>Georges Seurat 
+<li>Giorgio de Chirico 
+<li>Edvard Munch 
+<li>Pablo Picasso
+ 
+ 
+ 
+
+<li>Serena Williams 
+<li>Kristin Chenoweth
+<li>Suzanne Shaw
+<li>Susan Olsen
+<li>Virginia Madsen
+<li>Tori Spelling
+<li>Marcia Cross
+<li>Carly Simon
+<li>Jennifer Morrison 
+<li>Princess Margaret
+<li>Michele Bachmann
+<li>Janet Jackson
+<li>Gwen Stefani 
+<li>Whoopi Goldberg
+<li>Elle Macpherson
+<li>Lisa Kudrow 
+<li>Gwyneth Paltrow
+<li>Cindy McCain
+<li>Loretta Lynn 
+<li>Sharon Stone
+ 
+ 
+
+<li>Kanye West 
+<li>Ian Thorpe
+<li>Scotty Pippen
+<li>Paul Scholes
+<li>Simon Cowell
+<li>Kareem Abdul-Jabbar
+<li>Percy Harvin
+<li>Terrell Davis
+<li>Dwyane Wade
+<li>James Cromwell
+<li>Hugh Jackman
+<li>Ben Affleck
+
+</ol> 
+
+ From: <a href="https://migrainepal.com/famous-with-migraine/">https://migrainepal.com/famous-with-migraine/</a>
+
+ 
+ <h6>Github at <a href="https://github.com/hpssjellis/pre-migraine">https://github.com/hpssjellis/pre-migraine</a></h6>
+ <h6>Twitter: <a href="https://twitter.com/rocksetta">@rocksetta</a></h6>
+ 
+  
+See these sections: <br>
+<a href="#top">Top of page </a><br>
+<a href="#background">My Background</a><br>
+<a href="#solution">Migraine solutions</a><br>
+
+
+<a href="#RocksettaMigraineTesting"> Rocksetta Migraine Prevention Testing </a><br>
+<a href="#EocksettasLatestMigrainePrevention"> Latest Rocksetta Migraine Prevention Method</a><br>
+<a href="#RocksettaBasicConcept">Rocksetta Basic Migraine Prevention Concept</a><br>
+<a href="#RocksettaBasicTheory">Rocksetta Basic Migraine Prevention Theory</a><br>
+<a href="#Migraineurs">Possible Migraineurs now and from History:</a><br>
+<a href="#Bottom">Bottom of Rocksetta Migraine Prevention page</a><br>
+  
+  <h6> Use at your Own Risk! By <a href=""https://twitter.com/rocksetta>@rocksetta</a>  <br>
+ Website: <a href="https://www.rocksetta.com/">www.rocksetta.com</a>
+</h6>
