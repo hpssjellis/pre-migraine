@@ -1,4 +1,4 @@
-<a Name="top"></a>Version: 0.7.7 <br>
+<a Name="top"></a>Version: 0.7.8 <br>
 <h2 align=center> My Personal Migraine Prevention Site </h2>
 
 
@@ -211,7 +211,7 @@ if (parseInt(document.getElementById('myText1').value) >= 66000){
   clearInterval(document.myTimer01)
   document.myTimer01 = setInterval(myCountDown, document.myMsPerMilliCode)               
   localStorage.setItem('myStoredMilliCode', document.myMsPerMilliCode)
-              
+  document.getElementById('my1percentButton').click()            
               
               
 }">
@@ -283,7 +283,7 @@ The basic concept below is to set the sliders depending on how you feel you are 
  </table> <br> <br>
 
  <h5>Single Snacks of Issue Foods. Click the relevant buttons</h5>   
-</b><input type=button value="1%" style="font-size : 40px; " onclick="{
+</b><input id="my1percentButton" type=button value="1%" style="font-size : 40px; " onclick="{
   document.getElementById('myMain').value = parseInt( document.getElementById('myMain').value) + 1         
   document.getElementById('myText1').value = parseInt(document.getElementById('myMain').value) * 1000
   document.getElementById('mySave01').click()                                          
